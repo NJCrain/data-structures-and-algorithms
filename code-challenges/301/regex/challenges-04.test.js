@@ -22,7 +22,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let regex = /[A-Z](\w+)/g;
+  let regex = /[A-Z]\w+/g;
   return str.match(regex);
 };
 
@@ -32,7 +32,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let regex = /^[A-J]\w+/;
+  let citiesFiltered = [];
+  arr.forEach(city => {
+    if (regex.test(city)) {
+      citiesFiltered.push(city);
+    }
+  });
+  return citiesFiltered;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,7 +120,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
