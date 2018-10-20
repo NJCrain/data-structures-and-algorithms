@@ -121,10 +121,12 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // arr.forEach(num => {
-  //   if (num %  2)
-  // })
-};
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (!(arr[i] % 2)) {
+      arr.splice(i, 1);
+    }
+  }
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -220,7 +222,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
