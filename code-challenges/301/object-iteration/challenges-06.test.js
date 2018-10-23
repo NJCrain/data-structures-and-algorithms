@@ -98,8 +98,17 @@ hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-}
+  let hasChildren = false;
+  arr.forEach(obj => {
+    if (obj.name === character) {
+      let values = Object.values(obj);
+      if (values[2].length) {
+        hasChildren = true;
+      }
+    }
+  });
+  return hasChildren;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -183,7 +192,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
