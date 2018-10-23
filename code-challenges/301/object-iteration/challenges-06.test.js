@@ -12,8 +12,8 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
-}
+  return Object.keys(obj);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -65,11 +65,11 @@ let characters = [
     children: [],
     house: 'Snow'
   }
-]
+];
 
 const totalCharacters = (arr) => {
-  // Solution code here...
-}
+  return arr.length;
+};
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -79,9 +79,11 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.forEach(character => {
+    houses.push(character.house);
+  });
   return houses;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -162,19 +164,19 @@ Run your tests from the console: jest challenges-06.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return the keys from an object', () => {
     expect(getCourseKeys(courseInfo)).toStrictEqual([ 'name', 'duration', 'topics', 'finalExam' ]);
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('something specific', () => {
     expect(totalCharacters(characters)).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('something specific', () => {
     expect(getHouses(characters)).toStrictEqual([ 'Stark', 'Arryn', 'Lannister', 'Targaryen', 'Tyrell', 'Stark', 'Snow' ]);
     expect(getHouses(characters).length).toStrictEqual(7);
