@@ -74,12 +74,10 @@ const evenOdd = arr => {
   return arr.map(num => {
     if (isNaN(num)) {
       return 'N/A';
-    }
-    else {
+    } else {
       if (num % 2) {
         return 'odd';
-      }
-      else {
+      } else {
         return 'even';
       }
     }
@@ -129,7 +127,9 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = arr => {
-  // Solution code here...
+  return arr.map(obj => {
+    return obj.ability.name;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -288,7 +288,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an array containing only the ability names', () => {
     expect(extractAbilities(snorlaxAbilities.abilities)).toStrictEqual([
       'gluttony',
