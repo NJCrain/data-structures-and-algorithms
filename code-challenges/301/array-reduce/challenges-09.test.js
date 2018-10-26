@@ -36,7 +36,7 @@ let starWarsData = [{
   skin_color: 'gold',
   eye_color: 'yellow',
   birth_year: '112BBY',
-  gender: 'n/a'},
+  gender: 'n/a',},
 {
   name: 'R2-D2',
   height: '96',
@@ -45,7 +45,7 @@ let starWarsData = [{
   skin_color: 'white, blue',
   eye_color: 'red',
   birth_year: '33BBY',
-  gender: 'n/a'
+  gender: 'n/a',
 },
 {
   name: 'Darth Vader',
@@ -55,7 +55,7 @@ let starWarsData = [{
   skin_color: 'white',
   eye_color: 'yellow',
   birth_year: '41.9BBY',
-  gender: 'male'
+  gender: 'male',
 },
 {
   name: 'Leia Organa',
@@ -65,8 +65,8 @@ let starWarsData = [{
   skin_color: 'light',
   eye_color: 'brown',
   birth_year: '19BBY',
-  gender: 'female'
-}]
+  gender: 'female',
+}];
 
 const returnNames = (arr) => {
   return arr.reduce((accumulator, character, idx) => {
@@ -136,11 +136,16 @@ const characters = [
     name: 'Jon',
     spouse: null,
     house: 'Snow',
-  },
+  }
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator, value) => {
+    if (value.children) {
+      accumulator += value.children.length;
+    }
+    return accumulator;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -174,7 +179,7 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -209,7 +214,7 @@ const snorlaxData = {
       },
       effort: 9,
       baseStat: 65,
-    },
+    }
   ],
   name: 'snorlax',
   weight: 4600,
@@ -262,7 +267,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
@@ -282,7 +287,7 @@ xdescribe('Testing challenge 6', () => {
 
 xdescribe('Testing challenge 7', () => {
   test('It should return any stats that match the input', () => {
-    expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
+    expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed', }, effort: 5, baseStat: 30, });
   });
 });
 
