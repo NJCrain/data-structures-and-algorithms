@@ -183,7 +183,12 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator, value) => {
+    if(isPrime(value)) {
+      accumulator++;
+    }
+    return accumulator;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -226,7 +231,12 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator, value) => {
+    if (value.stat.name === statName) {
+      accumulator = value;
+    }
+    return accumulator;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -284,13 +294,13 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return any stats that match the input', () => {
     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed', }, effort: 5, baseStat: 30, });
   });
