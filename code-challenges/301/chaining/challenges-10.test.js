@@ -62,8 +62,6 @@ const divisibleByFiveTwoToThePower = (input) => {
     })
   })
 
-  console.log(divisByFive);
-
   return divisByFive.map((val, idx) => {
     return divisByFive[idx].map(value => {
       return Math.pow(2, value);
@@ -134,8 +132,13 @@ let starWarsData = [{
 }]
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
-}
+  return data.reduce((acc, val) => {
+    if (val.gender === 'male' || val.gender === 'female') {
+      console.log(val.name);
+      acc.push(val.name);
+    }
+    return acc;
+  }, []).join(' and ');}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
