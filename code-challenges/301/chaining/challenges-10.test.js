@@ -134,7 +134,6 @@ let starWarsData = [{
 let findMaleAndFemale = (data) => {
   return data.reduce((acc, val) => {
     if (val.gender === 'male' || val.gender === 'female') {
-      console.log(val.name);
       acc.push(val.name);
     }
     return acc;
@@ -147,7 +146,12 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((acc, val) => {
+    if (parseInt(val.height) < parseInt(acc.height)) {
+      acc = val;
+    }
+    return acc;
+  }, data[0]).name;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -202,7 +206,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the name of the shortest character', () => {
     expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
   });
