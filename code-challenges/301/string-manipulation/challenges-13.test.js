@@ -97,7 +97,10 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+   return arr.reduce((acc, str) => {
+        if (str.includes(target)) acc++;
+        return acc;
+    }, 0) === arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -224,7 +227,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should determine whether all the strings contain a given string', () => {
     const words = ['things', 'apple pie (:)', ':)banana pie', 'missing that thing', 'cant:)aloupe is tasty'];
 
