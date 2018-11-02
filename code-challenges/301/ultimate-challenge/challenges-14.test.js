@@ -9,7 +9,11 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+   return arr.map(str => {
+        let temp = str.split('');
+        temp[0] = temp[0].toUpperCase();
+        return temp.join('');
+    })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,8 +88,16 @@ let starWarsData = [{
 }]
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+    let almost = arr.reduce((acc, character) => {
+        if (parseInt(character.mass) > parseInt(arr[0].mass)) {
+            acc += `${character.name} - `
+        };
+    return acc;
+}, '');
+
+    return  almost.slice(0, almost.length - 3);
 }
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -164,7 +176,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return only characters that are bigger than Luke', () => {
     expect(biggerThanLuke(starWarsData)).toStrictEqual('Darth Vader - Pex Kylar');
     expect(biggerThanLuke([])).toStrictEqual('');
