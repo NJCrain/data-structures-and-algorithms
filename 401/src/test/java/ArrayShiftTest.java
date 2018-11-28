@@ -8,6 +8,13 @@ public class ArrayShiftTest {
     public void insertShiftArray() {
         int[] numbers = {1, 2, 3, 4};
         int[] numbersShifted = ArrayShift.insertShiftArray(numbers, 5);
-        //should
+        //length should be 1 more than numbers
+        //should contain the value at middle index
+        //some value before the middle should be at the same index in both arrays
+        //some value after the middle should be at an index 1 greater
+        assertTrue("The length should be 1 greater than the original array", numbersShifted.length == numbers.length + 1);
+        assertEquals(numbersShifted[numbers.length/2], 5);
+        assertEquals(numbers[0], numbersShifted[0]);
+        assertEquals(numbers[3], numbersShifted[4]);
     }
 }
