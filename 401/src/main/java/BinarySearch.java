@@ -1,6 +1,7 @@
 public class BinarySearch {
     public static int binarySearch(int[] arr, int value) {
         int middle = arr.length/2;
+        int rightBound = arr.length;
         while (middle >= 0) {
             if (arr[middle] == value) {
                 return middle;
@@ -10,7 +11,7 @@ public class BinarySearch {
                     break;
                 }
                 else {
-                    middle = (middle + arr.length ) / 2;
+                    middle = (middle + rightBound) / 2;
                 }
             }
             else {
@@ -18,6 +19,7 @@ public class BinarySearch {
                     break;
                 }
                 else {
+                    rightBound = middle;
                     middle = middle / 2;
                 }
             }
