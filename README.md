@@ -7,7 +7,8 @@ all 301 JavaScript code challenges are within the code challenges/301 [folder](c
 # 401 Java Table of Contents
 This table is organized by which day of class each challenge was assigned
 1. [Array Reverse](401/src/main/java/ArrayReverse.java) - [Challenge Documentation](#array-reverse)
-1. [Array Shift](401/src/main/java/ArrayShift.java) - [Challenge Documentation](#array-shift)
+2. [Array Shift](401/src/main/java/ArrayShift.java) - [Challenge Documentation](#array-shift)
+2. [Array Binary Search](401/src/main/java/BinarySearch.java) - [Challenge Documentation](#array-binary-search)
 
 
 # 401 Challenge Documentation
@@ -35,3 +36,16 @@ The approach for this challenge was to take all the values in the original array
 
 ### Solution
 ![whiteboard solution image](401/assets/array_shift.jpg)
+
+## Array Binary Search
+
+
+### Challenge
+Write a function that takes a sorted array and a value as arguments. Utilize a binary search to find the given value and return the index where it is located, or return -1 if it is not in the array.
+
+### Approach and Efficiency
+The approach for this challenge was to use a set of conditional checks to determine if the new "middle" index needs to be moved to the left or right or the current location, however the whiteboarded solution missed on handling certain issues. The biggest issues were ensuring that the while loop does eventually exit in the case of not finding the given value, and not adjusting what our right bound is in the instance where we move to the left but then need to move off to the right after. The efficiency of the final solution is O(log n) time at worst, and O(1) space.
+
+### Solution
+![whiteboard solution image 1](401/assets/array_binary_search1.jpg)
+![whiteboard solution image 2](401/assets/array_binary_search2.jpg)
