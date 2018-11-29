@@ -47,5 +47,5 @@ Write a function that takes a sorted array and a value as arguments. Utilize a b
 The approach for this challenge was to use a set of conditional checks to determine if the new "middle" index needs to be moved to the left or right or the current location, however the whiteboarded solution missed on handling certain issues. The biggest issues were ensuring that the while loop does eventually exit in the case of not finding the given value, and not adjusting what our right bound is in the instance where we move to the left but then need to move off to the right after. The efficiency of the final solution is O(log n) time at worst, and O(1) space.
 
 ### Solution
-![whiteboard solution image 1](401/assets/array_binary_search1.jpg)
-![whiteboard solution image 2](401/assets/array_binary_search2.jpg)
+![whiteboard solution image 1](401/assets/binary_search1.jpg)
+![whiteboard solution image 2](401/assets/binary_search2.jpg)
