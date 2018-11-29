@@ -7,7 +7,7 @@ public class BinarySearchTest {
     @Test
     public void testBinarySearch() {
         int[] numbers = {3, 4, 5, 6, 7};
-        assertEquals("The return value should be 4", 4, BinarySearch.binarySearch(numbers, 7));
+        assertEquals("The return value should be the index where 4 is located", 1, BinarySearch.binarySearch(numbers, 4));
     }
 
     @Test public void testBinarySearchNotFound() {
@@ -18,6 +18,11 @@ public class BinarySearchTest {
     @Test public void testBinarySearchLeftSide() {
         int[] numbers = {3, 4, 5, 6, 7};
         assertEquals("Should return a value of 0", 0, BinarySearch.binarySearch(numbers, 3));
+    }
+
+    @Test public void testBinarySearchRightSide() {
+        int[] numbers = {3, 4, 5, 6, 7};
+        assertEquals("Should return a value of the last index possible", 4, BinarySearch.binarySearch(numbers, 7));
     }
 
     @Test public void testBinarySearchReachZero() {
