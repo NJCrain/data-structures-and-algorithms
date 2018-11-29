@@ -15,4 +15,14 @@ public class BinarySearchTest {
         int[] numbers = {3, 4, 5, 6, 7};
         assertEquals("Should return a value of -1", -1, BinarySearch.binarySearch(numbers, 10));
     }
+
+    @Test public void testBinarySearchLeftSide() {
+        int[] numbers = {3, 4, 5, 6, 7};
+        assertEquals("Should return a value of 0", 0, BinarySearch.binarySearch(numbers, 3));
+    }
+
+    @Test public void testBinarySearchReachZero() {
+        int[] numbers = {3, 4, 5, 6, 7};
+        assertEquals("Should return a value of -1", -1, BinarySearch.binarySearch(numbers, 2));
+    }
 }

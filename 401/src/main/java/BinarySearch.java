@@ -14,7 +14,12 @@ public class BinarySearch {
                 }
             }
             else {
-                middle = middle / 2;
+                if (middle == 0) {
+                    break;
+                }
+                else {
+                    middle = middle / 2;
+                }
             }
         }
         return -1;
