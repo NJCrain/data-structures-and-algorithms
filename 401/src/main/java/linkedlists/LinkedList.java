@@ -41,4 +41,36 @@ public class LinkedList {
         }
         System.out.println(printString + ">");
     }
+
+    //Will add a new node to the list right before the Node with the value that is passed in
+    public void addBefore(int value, int before) {
+        Node current = this.head;
+
+        if(before == current.value) {
+            insert(value);
+            return;
+        }
+
+        while (current.next != null) {
+            if (current.next.value == before) {
+                current.next = new Node(value, current.next);
+                break;
+            }
+            current = current.next;
+        }
+    }
+
+    //Will add a new Node to the list right after the Node with the value passed in
+    public void addAfter(int value, int after) {
+
+        Node current = this.head;
+
+        while (current != null) {
+            if (current.value == after) {
+                current.next = new Node(value, current.next);
+                break;
+            }
+            current = current.next;
+        }
+    }
 }
