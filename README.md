@@ -8,7 +8,8 @@ all 301 JavaScript code challenges are within the code challenges/301 [folder](c
 This table is organized by which day of class each challenge was assigned
 1. [Array Reverse](401/src/main/java/ArrayReverse.java) - [Challenge Documentation](#array-reverse)
 2. [Array Shift](401/src/main/java/ArrayShift.java) - [Challenge Documentation](#array-shift)
-2. [Array Binary Search](401/src/main/java/BinarySearch.java) - [Challenge Documentation](#array-binary-search)
+3. [Array Binary Search](401/src/main/java/BinarySearch.java) - [Challenge Documentation](#array-binary-search)
+4. [Singly Linked List](401/src/main/java/linkedlists) - [Challenge Documentation](#singly-linked-list)
 
 
 # 401 Challenge Documentation
@@ -49,3 +50,29 @@ The approach for this challenge was to use a set of conditional checks to determ
 ### Solution
 ![whiteboard solution image 1](401/assets/binary_search1.jpg)
 ![whiteboard solution image 2](401/assets/binary_search2.jpg)
+
+## Singly Linked List
+A LinkedList class and Node class. The LinkedList keeps track of what node is its head value, and each node contains its own value and a pointer to the node after it in the list.
+
+### Challenge
+* Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
+* Within your LinkedList class, include a head property. Upon instantiation, an empty Linked List should be created.
+  * This object should be aware of a default empty value assigned to head when the linked list is instantiated.
+  * Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
+  * Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
+  * Define a method called print which takes in no arguments and outputs all of the current Node values in the Linked List.
+
+
+### Approach & Efficiency
+The approach for the insert method was to reassign the head property to a new Node that is constructed with the passed in value. This makes it a 0(1) time and space function. The includes and print methods both iterate over Nodes while not looking at a null node (the last node in the list). Both of these functions are O(n) time and O(1) space.
+
+### API
+
+#### Insert
+takes in an integer value to assign to a new node and inserts it at the head of the linked list
+
+#### Includes
+Searches the linked list to see if any node contains the provided value and will return true if so, otherwise returns false.
+
+#### Print
+Will print out the list as a comma separated list contained between \< and \> 
