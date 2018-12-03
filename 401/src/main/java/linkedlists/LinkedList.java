@@ -5,7 +5,7 @@ public class LinkedList {
     public Node head;
 
     //Instantiation creates an empty list with a head value of null
-    public void LinkedList() {
+    public LinkedList() {
         this.head = null;
     }
 
