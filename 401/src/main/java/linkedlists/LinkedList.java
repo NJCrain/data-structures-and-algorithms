@@ -32,7 +32,13 @@ public class LinkedList {
         String printString = "<";
         Node current = this.head;
         while (current != null) {
-            printString = printString + current.value + ", ";
+            if (current.next == null) {
+                printString = printString + current.value;
+            }
+            else {
+                printString = printString + current.value + ", ";
+            }
+            current = current.next;
         }
         System.out.println(printString + ">");
     }
