@@ -1,11 +1,35 @@
 package linkedlists;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
 
+    //Stuff to setup testing System.out.println() results
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+    private final PrintStream originalErr = System.err;
+
+    @Before
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+        System.setErr(new PrintStream(errContent));
+    }
+
+    @After
+    public void restoreStreams() {
+        System.setOut(originalOut);
+        System.setErr(originalErr);
+    }
+
+    //instantiate a test LinkedList to be used throughout the test assertions
     LinkedList test = new LinkedList();
 
     @Test
@@ -38,7 +62,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testIncludesMoreValues() {
+    public void testIncludesMoreNodes() {
 
         test.insert(0);
         test.insert(1);
@@ -50,6 +74,7 @@ public class LinkedListTest {
         test.insert(7);
         test.insert(8);
         test.insert(9);
+
         assertTrue("Will return true even in if the value is the first in the list", test.includes(9));
         assertTrue("Will return true even in if the value is the last in the list", test.includes(0));
         assertFalse("should still return false for a value not in the list", test.includes(10));
@@ -58,5 +83,36 @@ public class LinkedListTest {
 
     @Test
     public void testPrint() {
+
+        test.print();
+        assertEquals("Should print empty angle brackets for an empty list", "<>\n", outContent.toString());
+
+    }
+
+    @Test
+    public void testPrintOneNode() {
+
+        test.insert(0);
+        test.print();
+        assertEquals("Should give a proper formatted list even with just 1 node in the list", "<0>\n", outContent.toString());
+
+    }
+
+    @Test
+    public void testPrintMoreNodes() {
+
+        test.insert(0);
+        test.insert(1);
+        test.insert(2);
+        test.insert(3);
+        test.insert(4);
+        test.insert(5);
+        test.insert(6);
+        test.insert(7);
+        test.insert(8);
+        test.insert(9);
+        test.print();
+        assertEquals("Should print the list between angle brackets, each value separated with a comma", "<9, 8, 7, 6, 5, 4, 3, 2, 1, 0>\n", outContent.toString());
+
     }
 }
