@@ -12,7 +12,6 @@ public class LinkedList {
     //takes in a value for a new Node and inserts it at the head of the list
     public void insert(int value) {
         this.head = new Node(value, head);
-
     }
 
     //Traverses the list to find a given value, will return true if a node in the list contains that value
