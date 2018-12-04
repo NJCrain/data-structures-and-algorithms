@@ -61,7 +61,7 @@ public class LinkedList {
         Node current = this.head;
 
         if(value == current.value) {
-            insert(value);
+            insert(newVal);
             return;
         }
 
@@ -75,7 +75,7 @@ public class LinkedList {
     }
 
     //Will add a new Node to the list right after the Node with the value passed in
-    public void inserAfter(int value, int newVal) {
+    public void insertAfter(int value, int newVal) {
         if (!includes(value)) {
             return;
         }

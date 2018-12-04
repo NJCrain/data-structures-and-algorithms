@@ -113,13 +113,13 @@ public class LinkedListTest {
         test.insert(2);
         test.insert(1);
 
-        test.insertBefore(4, 3);
+        test.insertBefore(3, 4);
         assertTrue("The list should now include the newly added Node somewhere", test.includes(4));
 
         test.print();
         assertEquals("The new node should appear in the list before 3", "<1, 2, 4, 3>\n", outContent.toString());
 
-        test.insertBefore(0, 1);
+        test.insertBefore(1, 0);
         assertTrue("The list should now include the newly added Node somewhere, even if the value to insert before is at the head", test.includes(0));
 
         test.print();
@@ -133,7 +133,7 @@ public class LinkedListTest {
         test.insert(2);
         test.insert(1);
 
-        test.inserAfter(4, 3);
+        test.insertAfter(3, 4);
         assertTrue("The list should now contain the value", test.includes(4));
 
         test.print();
