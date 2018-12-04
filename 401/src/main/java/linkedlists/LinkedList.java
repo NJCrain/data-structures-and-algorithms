@@ -42,6 +42,7 @@ public class LinkedList {
         System.out.println(printString + ">");
     }
 
+    //Will add a new node at the end of the linked list
     public void append(int value) {
         Node current = this.head;
         while (current != null) {
