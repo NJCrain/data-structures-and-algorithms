@@ -42,18 +42,32 @@ public class LinkedList {
         System.out.println(printString + ">");
     }
 
-    //Will add a new node to the list right before the Node with the value that is passed in
-    public void addBefore(int value, int before) {
+    public void append(int value) {
+        Node current = this.head;
+        while (current != null) {
+            if (current.next == null) {
+                current.next = new Node(value, null);
+                break;
+            }
+            current = current.next;
+        }
+    }
+
+    //Will add a new node to the list right before the Node with the value that is passed in, if a node includes that value
+    public void insertBefore(int value, int newVal) {
+        if (!includes(value)) {
+            return;
+        }
         Node current = this.head;
 
-        if(before == current.value) {
+        if(value == current.value) {
             insert(value);
             return;
         }
 
         while (current.next != null) {
-            if (current.next.value == before) {
-                current.next = new Node(value, current.next);
+            if (current.next.value == value) {
+                current.next = new Node(newVal, current.next);
                 break;
             }
             current = current.next;
@@ -61,13 +75,16 @@ public class LinkedList {
     }
 
     //Will add a new Node to the list right after the Node with the value passed in
-    public void addAfter(int value, int after) {
+    public void inserAfter(int value, int newVal) {
+        if (!includes(value)) {
+            return;
+        }
 
         Node current = this.head;
 
         while (current != null) {
-            if (current.value == after) {
-                current.next = new Node(value, current.next);
+            if (current.value == value) {
+                current.next = new Node(newVal, current.next);
                 break;
             }
             current = current.next;
