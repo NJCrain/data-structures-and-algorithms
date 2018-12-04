@@ -10,6 +10,7 @@ This table is organized by which day of class each challenge was assigned
 2. [Array Shift](401/src/main/java/ArrayShift.java) - [Challenge Documentation](#array-shift)
 3. [Array Binary Search](401/src/main/java/BinarySearch.java) - [Challenge Documentation](#array-binary-search)
 4. [Singly Linked List](401/src/main/java/linkedlists) - [Challenge Documentation](#singly-linked-list)
+5. [Linked List Insertions](401/src/main/java/linkedlists) - [Challenge Documentation](#linked-list-insertions)
 
 
 # 401 Challenge Documentation
