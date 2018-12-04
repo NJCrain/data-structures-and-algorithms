@@ -106,4 +106,53 @@ public class LinkedListTest {
 
         assertEquals("Should print the list between angle brackets, each value separated with a comma", "<9, 8, 7, 6, 5, 4, 3, 2, 1, 0>\n", outContent.toString());
     }
+
+    @Test
+    public void testAppend() {
+        test.insert(1);
+        test.append(2);
+
+        assertTrue("Should now contain the value in the linked list", test.includes(2));
+        assertEquals("The added value should come after the head in this case", 2, test.head.next.value);
+
+        test.append(3);
+        test.print();
+        assertEquals("The list should now contain 1 2 3 in order", "<1, 2, 3>\n", outContent.toString());
+    }
+
+    @Test
+    public void testInsertBefore() {
+        test.insert(3);
+        test.insert(2);
+        test.insert(1);
+
+        test.insertBefore(3, 4);
+        assertTrue("The list should now include the newly added Node somewhere", test.includes(4));
+
+        test.print();
+        assertEquals("The new node should appear in the list before 3", "<1, 2, 4, 3>\n", outContent.toString());
+
+        test.insertBefore(1, 0);
+        assertTrue("The list should now include the newly added Node somewhere, even if the value to insert before is at the head", test.includes(0));
+
+        test.print();
+        assertEquals("The 0 should also end up in the correct location", "<1, 2, 4, 3>\n<0, 1, 2, 4, 3>\n", outContent.toString());
+
+    }
+
+    @Test
+    public void testInsertAfter() {
+        test.insert(3);
+        test.insert(2);
+        test.insert(1);
+
+        test.insertAfter(3, 4);
+        assertTrue("The list should now contain the value", test.includes(4));
+
+        test.print();
+        assertEquals("The list should contain the new value in the correct location", "<1, 2, 3, 4>\n", outContent.toString());
+
+        test.insertAfter(4, 5);
+        assertTrue("should have no issue adding another value after adding one", test.includes(5));
+    }
 }
