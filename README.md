@@ -76,3 +76,19 @@ Searches the linked list to see if any node contains the provided value and will
 
 #### Print
 Will print out the list as a comma separated list contained between \< and \> 
+
+## Linked List Insertions
+
+
+### Challenge
+* Add an append challenge to your LinkedList class that takes a value and adds it at the end of the Linked List.
+* Add an insertBefore function to your LinkedList class that takes in a value and newValue, and inserts a new Node before the Node that contains the given value.
+* Add an insertAfter function to your LinkedList class that takes in a value and newValue, and inserts a new Node after the Node that contains the given value.
+
+### Approach and Efficiency
+The approach for all these methods involves iterating over the Nodes in the Linked List until reaching the given position where the new Node needs to be inserted. The new Node is then created and inserted into the list by updating other Nodes next value where necessary. All three of these functions take O(n) time and O(1) space.
+
+### Solution
+![whiteboard solution image 1](401/assets/ll_insertions_append)
+![whiteboard solution image 2](401/assets/ll_insertions_before)
+![whiteboard solution image 3](401/assets/;;_insertions_after)
