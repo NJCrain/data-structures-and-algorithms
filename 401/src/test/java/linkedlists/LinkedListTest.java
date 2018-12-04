@@ -108,6 +108,19 @@ public class LinkedListTest {
     }
 
     @Test
+    public void testAppend() {
+        test.insert(1);
+        test.append(2);
+
+        assertTrue("Should now contain the value in the linked list", test.includes(2));
+        assertEquals("The added value should come after the head in this case", 2, test.head.next.value);
+
+        test.append(3);
+        test.print();
+        assertEquals("The list should now contain 1 2 3 in order", "<1, 2, 3>\n", outContent.toString());
+    }
+
+    @Test
     public void testInsertBefore() {
         test.insert(3);
         test.insert(2);
@@ -138,5 +151,8 @@ public class LinkedListTest {
 
         test.print();
         assertEquals("The list should contain the new value in the correct location", "<1, 2, 3, 4>\n", outContent.toString());
+
+        test.insertAfter(4, 5);
+        assertTrue("should have no issue adding another value after adding one", test.includes(5));
     }
 }
