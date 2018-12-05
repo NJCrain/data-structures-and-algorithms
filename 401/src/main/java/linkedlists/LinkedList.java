@@ -99,7 +99,7 @@ public class LinkedList {
             Node kAway = current;
             for (int i = 0; i < k; i++) {
                 if(kAway.next == null && i != k-1) {
-                    break;
+                    throw new IndexOutOfBoundsException("Value entered is greater than total linked list length");
                 }
                 kAway = kAway.next;
             }
@@ -108,6 +108,6 @@ public class LinkedList {
             }
             current = current.next;
         }
-        throw new IndexOutOfBoundsException();
+        throw new IndexOutOfBoundsException("Value entered is greater than total linked list length");
     }
 }
