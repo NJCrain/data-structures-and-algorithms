@@ -91,4 +91,24 @@ public class LinkedList {
             current = current.next;
         }
     }
+
+    //Takes in an int k, and returns the value of the node k distance from the last node in the list
+    public int findKFromEnd(int k) throws IndexOutOfBoundsException {
+        Node current = this.head;
+
+        while (current !=null) {
+            Node kAway = current;
+            for (int i = 0; i < k; i++) {
+                if(kAway.next == null && i != k-1) {
+                    throw new IndexOutOfBoundsException("Value entered is greater than total linked list length");
+                }
+                kAway = kAway.next;
+            }
+            if (kAway.next == null) {
+                return current.value;
+            }
+            current = current.next;
+        }
+        throw new IndexOutOfBoundsException("Value entered is greater than total linked list length");
+    }
 }

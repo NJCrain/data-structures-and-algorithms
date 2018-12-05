@@ -2,7 +2,9 @@ package linkedlists;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -154,5 +156,38 @@ public class LinkedListTest {
 
         test.insertAfter(4, 5);
         assertTrue("should have no issue adding another value after adding one", test.includes(5));
+    }
+
+    @Test
+    public void testFindKFromEnd() {
+        test.insert(0);
+        test.insert(1);
+        test.insert(2);
+        test.insert(3);
+        test.insert(4);
+        test.insert(5);
+        test.insert(6);
+        test.insert(7);
+        test.insert(8);
+        test.insert(9);
+
+        assertEquals("Searching for the value 1 from the end should return 1", 1, test.findKFromEnd(1));
+        assertEquals("Should give the last value if 0 is entered", 0, test.findKFromEnd(0));
+        assertEquals("Should also be able to give the value farthest away from the end", 9, test.findKFromEnd(9));
+    }
+
+    //information for this test found at https://github.com/junit-team/junit4/wiki/exception-testing
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
+    @Test
+    public void testExceptionFindKFromEnd() throws IndexOutOfBoundsException {
+            test.insert(0);
+            test.insert(1);
+            test.insert(2);
+            test.insert(3);
+
+            thrown.expect(IndexOutOfBoundsException.class);
+            test.findKFromEnd(12);
     }
 }
