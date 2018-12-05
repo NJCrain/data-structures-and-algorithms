@@ -91,4 +91,23 @@ public class LinkedList {
             current = current.next;
         }
     }
+
+    public int findKFromEnd(int k) throws IndexOutOfBoundsException {
+        Node current = this.head;
+
+        while (current !=null) {
+            Node kAway = current;
+            for (int i = 0; i < k; i++) {
+                if(kAway.next == null && i != k-1) {
+                    break;
+                }
+                kAway = kAway.next;
+            }
+            if (kAway == null) {
+                return current.value;
+            }
+            current = current.next;
+        }
+        throw new IndexOutOfBoundsException();
+    }
 }
