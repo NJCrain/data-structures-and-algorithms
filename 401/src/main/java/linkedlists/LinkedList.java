@@ -103,7 +103,7 @@ public class LinkedList {
                 }
                 kAway = kAway.next;
             }
-            if (kAway == null) {
+            if (kAway.next == null) {
                 return current.value;
             }
             current = current.next;

@@ -155,4 +155,22 @@ public class LinkedListTest {
         test.insertAfter(4, 5);
         assertTrue("should have no issue adding another value after adding one", test.includes(5));
     }
+
+    @Test
+    public void testFindKFromEnd() {
+        test.insert(0);
+        test.insert(1);
+        test.insert(2);
+        test.insert(3);
+        test.insert(4);
+        test.insert(5);
+        test.insert(6);
+        test.insert(7);
+        test.insert(8);
+        test.insert(9);
+
+        assertEquals("Searching for the value 1 from the end should return 1", 1, test.findKFromEnd(1));
+        assertEquals("Should give the last value if 0 is entered", 0, test.findKFromEnd(0));
+        assertEquals("Should also be able to give the value farthesest away from the end", 9, test.findKFromEnd(9));
+    }
 }
