@@ -92,6 +92,7 @@ public class LinkedList {
         }
     }
 
+    //Takes in an int k, and returns the value of the node k distance from the last node in the list
     public int findKFromEnd(int k) throws IndexOutOfBoundsException {
         Node current = this.head;
 

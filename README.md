@@ -1,5 +1,5 @@
 # data-structures-and-algorithms
-This repo contains various code challenges from Code Fellows 301 JavaScript course as well as data structures and algorithims challenges from the Code Fellows 401 Java class.
+This repo contains various code challenges from Code Fellows 301 JavaScript course as well as data structures and algorithms challenges from the Code Fellows 401 Java class.
 
 # 301 JavaScript
 all 301 JavaScript code challenges are within the code challenges/301 [folder](code-challenges/301)
@@ -11,7 +11,7 @@ This table is organized by which day of class each challenge was assigned
 3. [Array Binary Search](401/src/main/java/BinarySearch.java) - [Challenge Documentation](#array-binary-search)
 4. [Singly Linked List](401/src/main/java/linkedlists) - [Challenge Documentation](#singly-linked-list)
 5. [Linked List Insertions](401/src/main/java/linkedlists) - [Challenge Documentation](#linked-list-insertions)
-
+6. [Linked List Find K From End](401/src/main/java/linkedlists) - [Challenge Documentation](#linked-list-find-k-from-end)
 
 # 401 Challenge Documentation
 
@@ -93,3 +93,15 @@ The approach for all these methods involves iterating over the Nodes in the Link
 ![whiteboard solution image 1](401/assets/ll_insertions_append)
 ![whiteboard solution image 2](401/assets/ll_insertions_before)
 ![whiteboard solution image 3](401/assets/;;_insertions_after)
+
+## Linked List Find K From End
+
+
+### Challenge
+Write a method for your LinkedList class that takes in an integer k and returns the value from the kth node from the end of the list.
+
+### Approach and Efficiency
+The approach for this method was to start by looking at the head of the list, and then look k nodes forward from there and see if the next value of that node is null. If that node k away from the current has a next value of null then it will return the value from the current node. If not, then the current node will be set to the next in the list until either the proper node is found or the function has to throw an error due to being out of the bounds of the list. The time of this method is O(n) and the space is O(1).
+
+### Solution
+![whiteboard solution image](401/assets/ll_kth_from_end.jpg)
