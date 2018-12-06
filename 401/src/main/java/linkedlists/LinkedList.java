@@ -9,6 +9,33 @@ public class LinkedList {
         this.head = null;
     }
 
+    //Takes in two linked lists and merges the second into the first with, alternating nodes from either list. Returns the head of the newly merged list
+    public static Node mergeLists(LinkedList l1, LinkedList l2) {
+        Node current = l1.head;
+        Node insert = l2.head;
+        int counter  = 0;
+
+        if (current == null) {
+            return l2.head;
+        }
+
+        while(current != null && insert != null) {
+            if (counter % 2 == 0) {
+                l1.insertAfter(current.value, insert.value);
+                insert = insert.next;
+            }
+            current = current.next;
+            counter++;
+        }
+        if (current == null && insert != null) {
+            while (insert != null) {
+                l1.append(insert.value);
+                insert = insert.next;
+            }
+        }
+        return l1.head;
+    }
+
     //takes in a value for a new Node and inserts it at the head of the list
     public void insert(int value) {
         this.head = new Node(value, head);
