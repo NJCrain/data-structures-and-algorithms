@@ -12,11 +12,11 @@ This table is organized by which day of class each challenge was assigned
 4. [Singly Linked List](401/src/main/java/linkedlists) - [Challenge Documentation](#singly-linked-list)
 5. [Linked List Insertions](401/src/main/java/linkedlists) - [Challenge Documentation](#linked-list-insertions)
 6. [Linked List Find K From End](401/src/main/java/linkedlists) - [Challenge Documentation](#linked-list-find-k-from-end)
+7. [Merge Two Linked Lists](401/src/main/java/linkedlists) - [Challenge Documentation](#merge-two-linked-lists)
 
 # 401 Challenge Documentation
 
 ## Array Reverse
-
 
 ### Challenge
 Write a function that takes an array as an argument and returns an array that is the reverse of the original.
@@ -40,7 +40,6 @@ The approach for this challenge was to take all the values in the original array
 ![whiteboard solution image](401/assets/array_shift.jpg)
 
 ## Array Binary Search
-
 
 ### Challenge
 Write a function that takes a sorted array and a value as arguments. Utilize a binary search to find the given value and return the index where it is located, or return -1 if it is not in the array.
@@ -80,7 +79,6 @@ Will print out the list as a comma separated list contained between \< and \>
 
 ## Linked List Insertions
 
-
 ### Challenge
 * Add an append challenge to your LinkedList class that takes a value and adds it at the end of the Linked List.
 * Add an insertBefore function to your LinkedList class that takes in a value and newValue, and inserts a new Node before the Node that contains the given value.
@@ -90,12 +88,11 @@ Will print out the list as a comma separated list contained between \< and \>
 The approach for all these methods involves iterating over the Nodes in the Linked List until reaching the given position where the new Node needs to be inserted. The new Node is then created and inserted into the list by updating other Nodes next value where necessary. All three of these functions take O(n) time and O(1) space.
 
 ### Solution
-![whiteboard solution image 1](401/assets/ll_insertions_append)
-![whiteboard solution image 2](401/assets/ll_insertions_before)
-![whiteboard solution image 3](401/assets/;;_insertions_after)
+![whiteboard solution image 1](401/assets/ll_insertions_append.jpg)
+![whiteboard solution image 2](401/assets/ll_insertions_before.jpg)
+![whiteboard solution image 3](401/assets/ll_insertions_after.jpg)
 
 ## Linked List Find K From End
-
 
 ### Challenge
 Write a method for your LinkedList class that takes in an integer k and returns the value from the kth node from the end of the list.
@@ -105,3 +102,14 @@ The approach for this method was to start by looking at the head of the list, an
 
 ### Solution
 ![whiteboard solution image](401/assets/ll_kth_from_end.jpg)
+
+## Merge Two Linked Lists
+
+### Challenge
+Write a static method for your LinkedList class that takes in two LinkedLists and merges them together, alternating nodes from each list, and returns the head of the new list
+
+### Approach and Efficiency
+The approach for this method was to merge the second list into the first one, simply adding values after each node from the original list. To achieve this a counter is used while moving through both the lists, and every time the counter is an even number a node from the 2nd List is inserted into the first. It will also handle cases where one of the two lists are longer than the other, and if one or both lists are empty (head points to null). The Big O time efficiency for this solution is O(n) and the space efficiency is O(1).
+
+### Solution
+![whiteboard solution image](401/assets/ll_merge.jpg)
