@@ -190,4 +190,85 @@ public class LinkedListTest {
             thrown.expect(IndexOutOfBoundsException.class);
             test.findKFromEnd(12);
     }
+
+    @Test
+    public void testMergeList() {
+        LinkedList test2 = new LinkedList();
+        test.insert(0);
+        test2.insert(1);
+        test.insert(2);
+        test2.insert(3);
+        test.insert(4);
+        test2.insert(5);
+        test.insert(6);
+        test2.insert(7);
+        test.insert(8);
+        test2.insert(9);
+
+        assertEquals("Should merge the 2nd list into the first and return the head",test.head, LinkedList.mergeLists(test, test2));
+
+        //test should now include various values from both lists
+        assertTrue(test.includes(0));
+        assertTrue(test.includes(9));
+        assertTrue(test.includes(1));
+        assertTrue(test.includes(8));
+
+        test.print();
+        assertEquals("Printing test should match an alternation of the Nodes from each list now", "<8, 9, 6, 7, 4, 5, 2, 3, 0, 1>\n", outContent.toString());
+    }
+
+    @Test
+    public void testMergeListFirstIsShorter() {
+        LinkedList test2 = new LinkedList();
+        test.insert(0);
+        test2.insert(1);
+        test.insert(2);
+        test2.insert(3);
+        test.insert(4);
+        test2.insert(5);
+        test2.insert(7);
+        test2.insert(9);
+
+        assertEquals("Should merge the 2nd list into the first and return the head",test.head, LinkedList.mergeLists(test, test2));
+
+        //test should now include various values from both lists
+        assertTrue(test.includes(0));
+        assertTrue(test.includes(9));
+        assertTrue(test.includes(1));
+        assertTrue(test.includes(4));
+
+        test.print();
+        assertEquals("The output should be alternations until the end of list 1, then just the 2nd lists values", "<4, 9, 2, 7, 0, 5, 3, 1>\n", outContent.toString());
+    }
+
+    @Test
+    public void testMergeListNullListFirst() {
+        LinkedList test2 = new LinkedList();
+        test2.insert(1);
+        test2.insert(3);
+        test2.insert(5);
+        test2.insert(7);
+        test2.insert(9);
+
+        assertEquals("The head should be the head of the second list if list one is empty", test2.head, LinkedList.mergeLists(test, test2));
+    }
+
+    @Test
+    public void testMergeListNullListSecond() {
+        LinkedList test2 = new LinkedList();
+        test2.insert(1);
+        test2.insert(3);
+        test2.insert(5);
+        test2.insert(7);
+        test2.insert(9);
+
+        assertEquals("The head should be the head of the first list if list two is empty", test2.head, LinkedList.mergeLists(test2, test));
+    }
+
+    @Test
+    public void testMergeListTwoNullLists() {
+        LinkedList test2 = new LinkedList();
+
+        assertNull("Should give back a null value if both lists are empty",LinkedList.mergeLists(test, test2));
+    }
 }
