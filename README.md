@@ -137,7 +137,7 @@ The approach for the push method is to point the top reference to a new Node con
 ### API
 
 #### Stack
-
+---
 ##### Push
 Takes in a value and adds a new Node with the provided value to the top of the stack with a O(1) time efficiency.
 
@@ -148,7 +148,7 @@ Removes the top Node from the stack and returns its value.
 Returns the current top Node of the stack.
 
 #### Queue
-
+---
 ##### Enqueue
 Takes in a value and adds a new Node to the rear of the queue with a O(1) time efficiency.
 
