@@ -1,8 +1,8 @@
 package stacksandqueues;
 
-public class Queue {
-    public Node front;
-    public Node rear;
+public class Queue<T> {
+    public Node<T> front;
+    public Node<T> rear;
 
     public Queue() {
         this.front = null;
@@ -10,29 +10,32 @@ public class Queue {
     }
 
     //Takes in a value and adds a new Node to the end of the queue, with that value
-    public void enqueue(int value) {
+    public void enqueue(T value) {
         if (rear == null) {
-            rear = new Node(value, null);
+            rear = new Node<>(value, null);
             front = rear;
         } else {
-            rear.next = new Node(value, null);
+            rear.next = new Node<>(value, null);
             rear = rear.next;
         }
     }
 
     //Removes the front node from the queue and returns its value. Will give a message and return 0 if the queue is empty
-    public int dequeue() {
+    public T dequeue() {
         if (front != null) {
-            Node temp = front;
+            Node<T> temp = front;
             this.front = front.next;
+            if (front == null) {
+                rear = null;
+            }
             return temp.value;
         }
         System.out.println("There is currently nothing in the queue");
-        return 0;
+        return null;
     }
 
     //Returns the front Node of the queue
-    public Node peek() {
+    public Node<T> peek() {
         return front;
     }
 }
