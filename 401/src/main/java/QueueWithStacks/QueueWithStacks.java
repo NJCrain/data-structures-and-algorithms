@@ -24,7 +24,6 @@ public class QueueWithStacks<T> {
 
         if (this.front == null) {
             this.stack1.push(value);
-            this.front = this.stack1.top;
             this.rear = this.stack1.top;
         } else {
             this.stack1.push(value);
@@ -36,9 +35,13 @@ public class QueueWithStacks<T> {
             this.stack1.push(current);
             current = this.stack2.pop();
         }
+        this.front = this.stack1.top;
     }
 
     public T dequeue() {
+        if (stack1.top != null) {
+            this.front = stack1.top.next;
+        }
         return this.stack1.pop();
     }
 
