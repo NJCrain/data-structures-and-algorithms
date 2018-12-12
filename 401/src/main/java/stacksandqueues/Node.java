@@ -2,9 +2,9 @@ package stacksandqueues;
 
 public class Node<T> {
     public T value;
-    public Node next;
+    public Node<T> next;
 
-    public Node(T value, Node next) {
+    public Node(T value, Node<T> next) {
         this.value = value;
         this.next = next;
     }

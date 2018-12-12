@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class QueueTest {
-    Queue<Integer> test = new Queue();
+    Queue<Integer> test = new Queue<>();
 
     @Test
     public void testConstructor() {
