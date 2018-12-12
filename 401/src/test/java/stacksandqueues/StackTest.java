@@ -23,7 +23,7 @@ public class StackTest {
         test.push(4);
 
         assertEquals("top should now point to the newer node", (Integer) 4, test.top.value);
-        assertEquals("The next node should be the one we added previously", 5, test.top.next.value);
+        assertEquals("The next node should be the one we added previously",(Integer) 5, test.top.next.value);
     }
 
     @Test
