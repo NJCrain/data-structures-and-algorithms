@@ -14,6 +14,8 @@ This table is organized by which day of class each challenge was assigned
 6. [Linked List Find K From End](401/src/main/java/linkedlists) - [Challenge Documentation](#linked-list-find-k-from-end)
 7. [Merge Two Linked Lists](401/src/main/java/linkedlists) - [Challenge Documentation](#merge-two-linked-lists)
 8. [Stacks and Queues](401/src/main/java/stacksandqueues) - [Challenge Documentation](#stacks-and-queues)
+9. [Queue with Stacks](401/src/main/java/QueueWithStacks) - [Challenge Documentation](#queue_with_stacks)
+10. [First-in, First-out Animal Shelter](401/src/main/java/FIFOAnimalShelter) - [Challenge Documentation](#first-in-first-out-animal-shelter)
 
 # 401 Challenge Documentation
 
@@ -170,3 +172,14 @@ The usefulness of maintaining the state of the queue all with the enqueue method
 
 ### Solution
 ![whiteboard solution image](401/assets/queue_with_stacks.jpg)
+
+## First-in, First-out Animal Shelter
+
+### Challenge
+Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach. The shelter should have an enqueue(animal) method that will add either a cat or dog object to the shelter. The shelter should also have a dequeue(pref) method that takes a preference of either cat or dog and returns either a cat or dog based on that preference.
+
+### Approach and Efficiency
+The approach for this challenge was to utilize two queues within the AnimalShelter class, one queue of dogs and one queue of cats. Enqueue checks to see what type of animal is being enqueued and will then call the enqueue method for the appropriate animal queue. The dequeue works in a similar way, checking the preference string entered and then dequeueing an animal from the appropriate queue and returning that animal. This allows for a time and space efficiency of O(1) for these methods, as they are utilizing the already O(1) methods on the internal queues.
+
+### Solution
+![whiteboard solution image](401/assets/fifo_animal_shelter.jpg)
