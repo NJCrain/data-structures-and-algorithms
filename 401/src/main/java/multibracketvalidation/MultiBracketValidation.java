@@ -3,6 +3,8 @@ package multibracketvalidation;
 import stacksandqueues.Stack;
 
 public class MultiBracketValidation {
+
+    //Takes in a string and checks to see that the brackets within it are properly balanced. If they aren't then it will return false
     public static boolean multiBracketValidation(String s) {
         Stack<Character> brackets = new Stack<>();
 

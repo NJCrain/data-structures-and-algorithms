@@ -16,6 +16,7 @@ This table is organized by which day of class each challenge was assigned
 8. [Stacks and Queues](401/src/main/java/stacksandqueues) - [Challenge Documentation](#stacks-and-queues)
 9. [Queue with Stacks](401/src/main/java/QueueWithStacks) - [Challenge Documentation](#queue_with_stacks)
 10. [First-in, First-out Animal Shelter](401/src/main/java/FIFOAnimalShelter) - [Challenge Documentation](#first-in-first-out-animal-shelter)
+11. [Multi-Bracket Validation](401/src/main/java/multibracketvalidation) - [Challenge Documentation](#multi-bracket-validation)
 
 # 401 Challenge Documentation
 
@@ -183,3 +184,14 @@ The approach for this challenge was to utilize two queues within the AnimalShelt
 
 ### Solution
 ![whiteboard solution image](401/assets/fifo_animal_shelter.jpg)
+
+## Multi-Bracket Validation
+
+### Challenge
+Write a method named multiBracketValidation that, given a string, returns true or false if that string has balanced brackets ie: (){[]} returns true but ({[)]} returns false.
+
+### Approach and Efficiency
+The approach for this challenge was to use a stack to track every instance of an opening bracket found, as they will then need to be closed in a last-in first-out order. Whenever a closing bracket is found, the top value from the stack of opening brackets is popped to see what type of closing bracket should be expected. If a closing bracket does not match to what it should be, or the stack is not empty after iterating through the entire string, the method will return false. This method has a Big O time and space efficiency of O(n) due to the need of creating a stack to track all opening brackets and having to iterate over every character in the string.
+
+### Solution
+![whiteboard solution image](401/assets/multi_bracket_validation.jpg)
