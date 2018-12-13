@@ -3,7 +3,7 @@ package multibracketvalidation;
 import stacksandqueues.Stack;
 
 public class MultiBracketValidation {
-    public boolean multiBracketValidation(String s) {
+    public static boolean multiBracketValidation(String s) {
         Stack<Character> brackets = new Stack<>();
 
         for (int i = 0; i < s.length(); i++) {
