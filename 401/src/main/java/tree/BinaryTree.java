@@ -27,19 +27,48 @@ public class BinaryTree<T> {
     }
 
     public static ArrayList<Node> inOrder(Node root) {
-        ArrayList<Node> nodes = new ArrayList<>();
-
-
+        return inOrderHelper(new ArrayList<>(), root);
     }
 
-    public static void main(String[] args) {
-        BinaryTree<Integer> test = new BinaryTree<>();
-        test.root = new Node<Integer>(3);
-        test.root.left = new Node<Integer>(2);
-        test.root.left.left= new Node<Integer>(1);
-        test.root.right= new Node<Integer>(4);
+    private static ArrayList<Node> inOrderHelper(ArrayList<Node> ordered, Node root) {
+        if (root.left != null) {
+            inOrderHelper(ordered, root.left);
+        }
+        ordered.add(root);
+        if (root.right != null) {
+            inOrderHelper(ordered, root.right);
+        }
 
-        for (Node node : preOrder(test.root)) {
+        return ordered;
+    }
+
+    public static ArrayList<Node> postOrder(Node root) {
+        return postOrderHelper(new ArrayList<>(), root);
+    }
+
+    private static ArrayList<Node> postOrderHelper(ArrayList<Node> ordered, Node root) {
+        if (root.left != null) {
+            postOrderHelper(ordered, root.left);
+        }
+        if (root.right != null) {
+            postOrderHelper(ordered, root.right);
+        }
+        ordered.add(root);
+
+        return ordered;
+    }
+
+
+        public static void main(String[] args) {
+        BinaryTree<Character> test = new BinaryTree<>();
+        test.root = new Node<>('A');
+        test.root.left = new Node<>('B');
+        test.root.left.left= new Node<>('D');
+        test.root.left.right= new Node<>('E');
+        test.root.right = new Node<>('C');
+        test.root.right.left = new Node<>('F');
+
+        for (Node node : postOrder(test.root)) {
             System.out.println(node.value);
         }
 //        System.out.println(preOrder(test.root));
