@@ -197,7 +197,7 @@ The approach for this challenge was to use a stack to track every instance of an
 ### Solution
 ![whiteboard solution image](401/assets/multi_bracket_validation.jpg)
 
-## Stacks and Queues
+## Trees
 Contains a BinaryTree, BinarySearchTree, and Node class. Each node has properties for its value, left child, and right child. A BinaryTree is for just a collection of these nodes, while a BinarySearchTree will sort them to the left or right based on their value in comparison to the root.
 
 ### Challenge
