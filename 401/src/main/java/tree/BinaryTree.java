@@ -7,7 +7,6 @@ public class BinaryTree<T> {
 
     public BinaryTree() {
         this.root = null;
-        ArrayList<Node> nodes = new ArrayList<>();
     }
 
     public static ArrayList<Node> preOrder(Node root) {
@@ -58,19 +57,4 @@ public class BinaryTree<T> {
         return ordered;
     }
 
-
-        public static void main(String[] args) {
-        BinaryTree<Character> test = new BinaryTree<>();
-        test.root = new Node<>('A');
-        test.root.left = new Node<>('B');
-        test.root.left.left= new Node<>('D');
-        test.root.left.right= new Node<>('E');
-        test.root.right = new Node<>('C');
-        test.root.right.left = new Node<>('F');
-
-        for (Node node : postOrder(test.root)) {
-            System.out.println(node.value);
-        }
-//        System.out.println(preOrder(test.root));
-    }
 }
