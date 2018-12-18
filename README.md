@@ -18,6 +18,7 @@ This table is organized by which day of class each challenge was assigned
 10. [First-in, First-out Animal Shelter](401/src/main/java/FIFOAnimalShelter) - [Challenge Documentation](#first-in-first-out-animal-shelter)
 11. [Multi-Bracket Validation](401/src/main/java/multibracketvalidation) - [Challenge Documentation](#multi-bracket-validation)
 12. [Trees](401/src/main/java/tree) - [Challenge Documentation](#trees)
+13. [FizzBuzz Tree](401/src/main/java/fizzbuzztree) - [Challenge Documentation](#fizzbuzz-tree)
 
 # 401 Challenge Documentation
 
@@ -227,3 +228,14 @@ Takes in a value and traverses the BinarySearchTree to add it in the correct pla
 
 #### search
 Takes in a value and returns the node that contains that value, or null if no node contains that value.
+
+## FizzBuzz Tree
+
+### Challenge
+Create a class named FizzBuzzTree that contains a method named fizzBuzzTree. This method should take in a tree, and change the values of the nodes based on their current value. If the value is divisible by 3, the node's value should be changed to fizz. If the value is divisible by 5, the node's value should be changed to buzz. If the value is divisible by both 3 and 5, the node's value should be changed to fizzbuzz.
+
+### Approach and Efficiency
+The approach for this method was to traverse the list in a post-order depth search, and check the nodes value to see which condition it meets (divisible by 3, divisible by 5, or both) and change its value as needed. This solution takes O(n) time as it has to traverse the entire tree recursively, and O(1) space.
+
+### Solution
+![whiteboard solution image](401/assets/fizzBuzzTree.jpg)
