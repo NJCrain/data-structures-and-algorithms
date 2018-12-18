@@ -4,11 +4,14 @@ import tree.BinaryTree;
 import tree.Node;
 
 public class FizzBuzzTree {
+
+    //Takes in a BinaryTree and traverses it using the fizzBuzz method to change values to fizz, buzz, or fizzbuzz if they meet the proper conditions.
     public static BinaryTree<Object> fizzBuzzTree(BinaryTree<Object> t) {
         fizzBuzz(t.root);
         return t;
     }
 
+    //traverses in a post-order style to change node values throughout the entire tree
     private static void fizzBuzz(Node root) {
         if (root == null) {
             return;
