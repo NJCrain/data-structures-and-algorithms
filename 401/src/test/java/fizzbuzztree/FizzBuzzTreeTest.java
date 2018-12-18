@@ -23,7 +23,7 @@ public class FizzBuzzTreeTest {
         assertEquals("The value left of the root should now be fizzbuzz", "fizzbuzz", test.root.left.value);
         assertEquals("The value 2 steps left of the root should stay 4", 4, test.root.left.left.value);
         assertEquals("The value right of the fizzbuzz should now be buzz", "buzz", test.root.left.right.value);
-        assertEquals("The value right of the root should now be fizz", "fizz", test.root.left.right.value);
+        assertEquals("The value right of the root should now be fizz", "fizz", test.root.right.value);
     }
 
 

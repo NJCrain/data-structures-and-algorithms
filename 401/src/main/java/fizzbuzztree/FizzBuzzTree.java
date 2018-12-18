@@ -16,18 +16,18 @@ public class FizzBuzzTree {
         if (root.left != null) {
             fizzBuzz(root.left);
         }
+        if (root.right != null) {
+            fizzBuzz(root.right);
+        }
+
         if ((int) root.value % 3 == 0) {
             if ((int) root.value % 5 == 0) {
                 root.value = "fizzbuzz";
             } else {
                 root.value = "fizz";
             }
-        }
-        if ((int) root.value % 5 == 0) {
+        } else if ((int) root.value % 5 == 0) {
             root.value = "buzz";
-        }
-        if (root.right != null) {
-            fizzBuzz(root.right);
         }
     }
 }
