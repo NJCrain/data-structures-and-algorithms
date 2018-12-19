@@ -73,4 +73,13 @@ public class BinaryTreeTest {
 
         assertEquals("The out content should remain empty", "", outContent.toString());
     }
+
+    @Test
+    public void testBreadthTraversalLargerTree() {
+        BinaryTree<Integer> test2 = new BinaryTree<>();
+        test2.root = new Node<Integer>(1, new Node<Integer>(2, new Node<Integer>(4, new Node<Integer>(8, null, new Node<Integer>(11)), null), new Node<Integer>(5)), new Node<Integer>(3, new Node<Integer>(6, new Node<>(9), null), new Node<>(7, null, new Node<>(10, new Node<>(12), null))));
+        BinaryTree.breadthTraversal(test2);
+
+        assertEquals("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n", outContent.toString());
+    }
 }
