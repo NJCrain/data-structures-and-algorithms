@@ -19,6 +19,7 @@ This table is organized by which day of class each challenge was assigned
 11. [Multi-Bracket Validation](401/src/main/java/multibracketvalidation) - [Challenge Documentation](#multi-bracket-validation)
 12. [Trees](401/src/main/java/tree) - [Challenge Documentation](#trees)
 13. [FizzBuzz Tree](401/src/main/java/fizzbuzztree) - [Challenge Documentation](#fizzbuzz-tree)
+14. [Breadth First Traversal](401/src/main/java/tree/BinaryTree.java) - [Challenge Documentation](#breadth-first-traversal)
 
 # 401 Challenge Documentation
 
@@ -239,3 +240,14 @@ The approach for this method was to traverse the list in a post-order depth sear
 
 ### Solution
 ![whiteboard solution image](401/assets/fizzBuzzTree.jpg)
+
+## Breadth First Traversal
+
+### Challenge
+Within the BinaryTree class, create a method that takes in a tree, and prints out the values of it Nodes via a breadth first traversal.
+
+### Approach and Efficiency
+The approach used for this challenge was to utilize a queue, starting by enqueueing the root node and then dequeuing it, printing its value and enqueuing its children. This process is repeated for every Node in the tree, which will fill the queue level by level for all the Nodes in the tree. This method is O(n) for both time and space. 
+
+### Solution
+![whiteboard solution image](401/assets/breadth-first-traversal.jpg)
