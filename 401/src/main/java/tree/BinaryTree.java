@@ -60,6 +60,10 @@ public class BinaryTree<T> {
     }
 
     public static void breadthTraversal(BinaryTree t) {
+        if (t.root ==null) {
+            return;
+        }
+
         Queue<Node> q = new Queue<>();
         q.enqueue(t.root);
 

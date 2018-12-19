@@ -65,4 +65,12 @@ public class BinaryTreeTest {
 
         assertEquals("The out content should match the following pattern", "A\nB\nC\nD\nE\nF\n", outContent.toString());
     }
+
+    @Test
+    public void testBreadthTraversalNullTree() {
+        BinaryTree<Integer> test2 = new BinaryTree<>();
+        BinaryTree.breadthTraversal(test2);
+
+        assertEquals("The out content should remain empty", "", outContent.toString());
+    }
 }
