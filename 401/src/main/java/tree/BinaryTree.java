@@ -11,6 +11,7 @@ public class BinaryTree<T> {
         this.root = null;
     }
 
+    //Takes in a root Node, and utilizing a helper method will return an ArrayList of all the Nodes in the tree, traversed by a depth first pre-order
     public static ArrayList<Node> preOrder(Node root) {
         return preOrderHelper(new ArrayList<>(), root);
     }
@@ -27,6 +28,7 @@ public class BinaryTree<T> {
         return ordered;
     }
 
+    //Takes in a root Node, and utilizing a helper method will return an ArrayList of all the Nodes in the tree, traversed by a depth first in-order
     public static ArrayList<Node> inOrder(Node root) {
         return inOrderHelper(new ArrayList<>(), root);
     }
@@ -43,6 +45,7 @@ public class BinaryTree<T> {
         return ordered;
     }
 
+    //Takes in a root Node, and utilizing a helper method will return an ArrayList of all the Nodes in the tree, traversed by a depth first post-order
     public static ArrayList<Node> postOrder(Node root) {
         return postOrderHelper(new ArrayList<>(), root);
     }
@@ -59,6 +62,7 @@ public class BinaryTree<T> {
         return ordered;
     }
 
+    //Takes in a tree, and using a queue for help, traverses the tree breadth first, printing out the value of nodes in that order
     public static void breadthTraversal(BinaryTree t) {
         if (t.root ==null) {
             return;
