@@ -1,5 +1,7 @@
 package tree;
 
+import stacksandqueues.Queue;
+
 import java.util.ArrayList;
 
 public class BinaryTree<T> {
@@ -55,6 +57,22 @@ public class BinaryTree<T> {
         ordered.add(root);
 
         return ordered;
+    }
+
+    public static void breadthTraversal(BinaryTree t) {
+        Queue<Node> q = new Queue<>();
+        q.enqueue(t.root);
+
+        while (q.front != null) {
+            Node front = q.dequeue();
+            if (front.left != null) {
+                q.enqueue(front.left);
+            }
+            if (front.right != null) {
+                q.enqueue(front.right);
+            }
+            System.out.println(front.value);
+        }
     }
 
 }
