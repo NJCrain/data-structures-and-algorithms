@@ -20,6 +20,7 @@ This table is organized by which day of class each challenge was assigned
 12. [Trees](401/src/main/java/tree) - [Challenge Documentation](#trees)
 13. [FizzBuzz Tree](401/src/main/java/fizzbuzztree) - [Challenge Documentation](#fizzbuzz-tree)
 14. [Breadth First Traversal](401/src/main/java/tree/BinaryTree.java) - [Challenge Documentation](#breadth-first-traversal)
+15. [Find Maximum Value Binary Tree](401/src/main/java/tree/BinaryTree.java) - [Challenge Documentation](#find-maximum-value-binary-tree)
 
 # 401 Challenge Documentation
 
@@ -251,3 +252,14 @@ The approach used for this challenge was to utilize a queue, starting by enqueue
 
 ### Solution
 ![whiteboard solution image](401/assets/breadth-first-traversal.jpg)
+
+## Find Maximum Value Binary Tree
+
+### Challenge
+Within the BinaryTree class, write a method that takes in a tree and returns the highest value stored in the tree. Assume that all the nodes contain integer values.
+
+### Approach and Efficiency
+The approach taken for this challenge was to traverse the tree using a depth first post-order recursive method. It will find what the highest value node is to both the right and left of a node, and then compare those values to find which is the highest, and return it. This method takes O(n) time since it needs to traverse the entire tree, and O(n) space as the more Nodes there are, the more variables are created as the call stack grows in size.
+
+### Solution
+![whiteboard solution image](401/assets/find-maximum-value-binary-tree.jpg)
