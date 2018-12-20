@@ -83,4 +83,32 @@ public class BinaryTree<T> {
         }
     }
 
+    public static int findMaximumValue(BinaryTree<Integer> t) {
+        if (t.root == null) {
+            return 0;
+        }
+        return findMaximumValueHelper(t.root);
+    }
+
+    private static int findMaximumValueHelper(Node<Integer> root) {
+        int highestLeft = root.value;
+        int highestRight = root.value;
+        if (root.left == null && root.right == null) {
+            return root.value;
+        }
+        if (root.left != null) {
+            highestLeft = findMaximumValueHelper(root.left);
+        }
+        if (root.right != null) {
+            highestRight = findMaximumValueHelper(root.right);
+        }
+        if (root.value >= highestLeft && root.value >= highestRight) {
+            return root.value;
+        } else if (highestLeft > highestRight) {
+            return highestLeft;
+        } else {
+            return highestRight;
+        }
+    }
+
 }

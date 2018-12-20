@@ -82,4 +82,35 @@ public class BinaryTreeTest {
 
         assertEquals("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n", outContent.toString());
     }
+
+    @Test
+    public void testFindMaximumValue() {
+        BinaryTree<Integer> test2 = new BinaryTree<>();
+        test2.root = new Node<Integer>(1, new Node<Integer>(2, new Node<Integer>(4, new Node<Integer>(8, null, new Node<Integer>(11)), null), new Node<Integer>(5)), new Node<Integer>(3, new Node<Integer>(6, new Node<>(9), null), new Node<>(7, null, new Node<>(10, new Node<>(12), null))));
+
+        assertEquals("Should give back 12 as the result", 12, BinaryTree.findMaximumValue(test2));
+    }
+
+    @Test
+    public void testFindMaximumValueEmptyTree() {
+        BinaryTree<Integer> test2 = new BinaryTree<>();
+
+        assertEquals("Should give back 0 in the case of a tree with no Nodes", 0, BinaryTree.findMaximumValue(test2));
+    }
+
+    @Test
+    public void testFindMaximumValueAllNodesLeft() {
+        BinaryTree<Integer> test2 = new BinaryTree<>();
+        test2.root = new Node<Integer>(1, new Node<Integer>(2, new Node<Integer>(3, new Node<Integer>(4, new Node<Integer>(5, new Node<Integer>(6, new Node<Integer>(7), null), null), null), null), null), null);
+
+        assertEquals("Should still work even with an odd tree structure", 7, BinaryTree.findMaximumValue(test2));
+    }
+
+    @Test
+    public void testFindMaximumValueAllSameValue() {
+        BinaryTree<Integer> test2 = new BinaryTree<>();
+        test2.root = new Node<Integer>(2, new Node<Integer>(2, new Node<Integer>(2, new Node<Integer>(2, null, new Node<Integer>(2)), null), new Node<Integer>(2)), new Node<Integer>(2, new Node<Integer>(2, new Node<>(2), null), new Node<>(2, null, new Node<>(2, new Node<>(2), null))));
+
+        assertEquals("Should hopefully give back 2", 2, BinaryTree.findMaximumValue(test2));
+    }
 }
