@@ -83,6 +83,7 @@ public class BinaryTree<T> {
         }
     }
 
+    //Takes in a tree of Integer values and returns the highest value in the tree. Returns 0 if the tree is empty
     public static int findMaximumValue(BinaryTree<Integer> t) {
         if (t.root == null) {
             return 0;
@@ -90,6 +91,7 @@ public class BinaryTree<T> {
         return findMaximumValueHelper(t.root);
     }
 
+    //Helper function to traverse the tree recursively in post order to return the highest value compared to a nodes value, and its highest left and right values
     private static int findMaximumValueHelper(Node<Integer> root) {
         int highestLeft = root.value;
         int highestRight = root.value;
