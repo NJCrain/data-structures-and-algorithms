@@ -95,6 +95,7 @@ public class BinaryTree<T> {
     private static int findMaximumValueHelper(Node<Integer> root) {
         int highestLeft = root.value;
         int highestRight = root.value;
+        
         if (root.left == null && root.right == null) {
             return root.value;
         }
@@ -104,13 +105,7 @@ public class BinaryTree<T> {
         if (root.right != null) {
             highestRight = findMaximumValueHelper(root.right);
         }
-        if (root.value >= highestLeft && root.value >= highestRight) {
-            return root.value;
-        } else if (highestLeft > highestRight) {
-            return highestLeft;
-        } else {
-            return highestRight;
-        }
+        return Math.max(root.value, Math.max(highestLeft, highestRight));
     }
 
 }
