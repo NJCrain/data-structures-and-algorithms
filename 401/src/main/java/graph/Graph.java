@@ -4,10 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Graph {
-    public List<Node> nodes;
+    List<Node> nodes;
 
     public Graph() {
         this.nodes = new ArrayList<>();
     }
 
+    public List<Node> getNodes() {
+        return nodes;
+    }
+
+    public int size() {
+        return nodes.size();
+    }
 }
