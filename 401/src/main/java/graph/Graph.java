@@ -8,24 +8,29 @@ import java.util.NoSuchElementException;
 public class Graph<T> {
     private List<Node<T>> nodes;
 
+    //Creates a new Graph object with an empty ArrayList of Nodes
     public Graph() {
         this.nodes = new ArrayList<>();
     }
 
+    //returns the ArrayList of Nodes for a graph
     public List<Node<T>> getNodes() {
         return nodes;
     }
 
+    //Returns and integer representing how many Nodes are in the graph
     public int size() {
         return nodes.size();
     }
 
+    //Takes in a value and adds a new Node with that value to the graph. Returns the new Node
     public Node<T> addNode(T value) {
         Node<T> n = new Node<>(value);
         this.nodes.add(n);
         return n;
     }
 
+    //Takes in 2 nodes and adds an Edge to each one to create the relation that they are neighbors. The new Edges will have a weight of 0 with this method
     public void addEdge(Node<T> node1, Node<T> node2) throws NoSuchElementException, InvalidParameterException {
         if (this.nodes.contains(node1) && this.nodes.contains(node2)) {
             if(node1 == node2) {
@@ -39,6 +44,7 @@ public class Graph<T> {
         }
     }
 
+    //Takes in 2 nodes and adds an Edge to each one to create the relation that they are neighbors. Also takes in a value for the weight of the Edges
     public void addEdge(Node<T> n1, Node<T> n2, int weight) throws NoSuchElementException {
         if (this.nodes.contains(n1) && this.nodes.contains(n2)) {
             if(n1 == n2) {
@@ -52,6 +58,7 @@ public class Graph<T> {
         }
     }
 
+    //Takes in a Node and returns that Node's ArrayList of Edges that point to its neighbors
     public List<Edge> getNeighbors(Node<T> node) {
         return node.neighbors;
     }
