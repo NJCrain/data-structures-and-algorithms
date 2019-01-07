@@ -21,6 +21,7 @@ This table is organized by which day of class each challenge was assigned
 13. [FizzBuzz Tree](401/src/main/java/fizzbuzztree) - [Challenge Documentation](#fizzbuzz-tree)
 14. [Breadth First Traversal](401/src/main/java/tree/BinaryTree.java) - [Challenge Documentation](#breadth-first-traversal)
 15. [Find Maximum Value Binary Tree](401/src/main/java/tree/BinaryTree.java) - [Challenge Documentation](#find-maximum-value-binary-tree)
+16. [Graph](401/src/main/java/graph) - [Challenge Documentation](#graph)
 
 # 401 Challenge Documentation
 
@@ -263,3 +264,38 @@ The approach taken for this challenge was to traverse the tree using a depth fir
 
 ### Solution
 ![whiteboard solution image](401/assets/find-maximum-value-binary-tree.jpg)
+
+## Graph
+A LinkedList class and Node class. The LinkedList keeps track of what node is its head value, and each node contains its own value and a pointer to the node after it in the list.
+
+### Challenge
+Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods: 1. addNode() - Adds a new node to the graph - Takes in the value of that node - Returns the added node 2. addEdge() - Adds a new edge between two nodes in the graph - Include the ability to have a “weight” - Takes in the two nodes to be connected by the edge - Both nodes should already be in the Graph.
+The Graph should also include: 
+   * getNodes() - Returns all of the nodes in the graph as a collection (set, list, or similar)
+   * getNeighbors() - 
+     * Returns a collection of nodes connected to the given node
+     * Takes in a given node
+     * Include the weight of the connection in the returned collection
+   * size() - Returns the total number of nodes in the graph
+
+
+
+### Approach & Efficiency
+The Graph class itself utilizes an ArrayList of Nodes to be able to easily access a Node and it's properties. Within each Node is its value and an ArrayList of its neighbors, stored as Edges. An Edge holds a pointer to the neighbor for the Node it belongs to, as well as a weight (if provided. Default is 0). With this implementation, each method within the graph class takes O(1) time and space as they utilize the methods on Lists.
+
+### API
+
+#### getNodes
+Takes in no arguments, returns an ArrayList of all the Nodes within the Graph.
+
+#### getNeighbors
+Takes in a single Node as an argument, and returns an ArrayList of neighbors for that Node, where each value is an Edge that points to a neighbor.
+
+#### size
+Takes in no arguments and returns the total number of Nodes in the Graph
+
+#### addNode
+Takes in a value and creates a new Node with that value and adds it to the Graph. Returns the new Node.
+
+#### addEdge
+Takes in two unique Nodes that are in the Graph as arguments, and can optionally take in an integer value for a weight. It will add an Edge to each of the provided Nodes list of neighbors. If a weight is not specified, the weight will be set to 0 by default. Will throw an exception if the Nodes provided are not both in the graph or are the same Node.
