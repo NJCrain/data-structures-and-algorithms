@@ -19,7 +19,7 @@ public class Graph<T> {
         return nodes.size();
     }
 
-    public Node addNode(T value) {
+    public Node<T> addNode(T value) {
         Node<T> n = new Node<>(value);
         this.nodes.add(n);
         return n;
@@ -34,12 +34,16 @@ public class Graph<T> {
         }
     }
 
-    public void addEdge(Node n1, Node n2, int weight) {
+    public void addEdge(Node n1, Node n2, int weight) throws NoSuchElementException {
         if (this.nodes.contains(n1) && this.nodes.contains(n2)) {
             n1.neighbors.add(new Edge(n2, weight));
             n2.neighbors.add(new Edge(n1, weight));
         } else {
             throw new NoSuchElementException("Could not find one of the provided Nodes in the graph");
         }
+    }
+
+    public List<Edge> getNeighbors(Node node) {
+        return node.neighbors;
     }
 }
