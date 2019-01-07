@@ -49,11 +49,44 @@ public class GraphTest {
         Node<Integer> node2 = g.getNodes().get(4);
         g.addEdge(node1, node2);
 
-        assertEquals(1, node1.neighbors.size());
-        assertEquals(1, node2.neighbors.size());
-        assertEquals(node2, node1.neighbors.get(0).neighbor);
-        assertEquals(node1, node2.neighbors.get(0).neighbor);
+        assertEquals("Should add 1 Edge to node1's list of neighbors",1, node1.neighbors.size());
+        assertEquals("Should also add 1 Edge to node2's list of neighbors",1, node2.neighbors.size());
+        assertEquals("The neighbor value of that edge for node1 should be node2", node2, node1.neighbors.get(0).neighbor);
+        assertEquals("The neighbor value of node2's edge should be node1", node1, node2.neighbors.get(0).neighbor);
+        assertEquals("Since no weight was provided, both edges should have weight 0", 0, node1.neighbors.get(0).weight);
+        assertEquals("Since no weight was provided, both edges should have weight 0", 0, node2.neighbors.get(0).weight);
 
+    }
+
+    @Test
+    public void testAddEdgeWithWeights() {
+        Node<Integer> node1 = g.getNodes().get(1);
+        Node<Integer> node2 = g.getNodes().get(4);
+        g.addEdge(node1, node2, 5);
+
+        assertEquals("Should add 1 Edge to node1's list of neighbors",1, node1.neighbors.size());
+        assertEquals("Should also add 1 Edge to node2's list of neighbors",1, node2.neighbors.size());
+        assertEquals("The neighbor value of that edge for node1 should be node2", node2, node1.neighbors.get(0).neighbor);
+        assertEquals("The neighbor value of node2's edge should be node1", node1, node2.neighbors.get(0).neighbor);
+        assertEquals("The weight should be what was provided in the method call", 5, node1.neighbors.get(0).weight);
+        assertEquals("The weight of each edge should be the same", node1.neighbors.get(0).weight, node2.neighbors.get(0).weight);
+    }
+
+    @Test
+    public void testGetNeighbors() {
+        Node<Integer> node1 = g.getNodes().get(1);
+        Node<Integer> node2 = g.getNodes().get(2);
+        Node<Integer> node3 = g.getNodes().get(3);
+        Node<Integer> node4 = g.getNodes().get(4);
+        g.addEdge(node1, node2);
+        g.addEdge(node2, node3);
+        g.addEdge(node1, node3);
+        g.addEdge(node3, node4);
+
+        assertEquals("node1 should have 2 neighbors", 2, g.getNeighbors(node1).size());
+        assertEquals("node2 should have 2 neighbors", 2, g.getNeighbors(node2).size());
+        assertEquals("node3 should have 3 neighbors", 3, g.getNeighbors(node3).size());
+        assertEquals("node4 should have 1 neighbor", 1, g.getNeighbors(node4).size());
     }
 
 }
