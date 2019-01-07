@@ -52,7 +52,7 @@ public class Graph<T> {
         }
     }
 
-    public List<Edge> getNeighbors(Node node) {
+    public List<Edge> getNeighbors(Node<T> node) {
         return node.neighbors;
     }
 }
