@@ -76,7 +76,7 @@ public class Graph<T> {
             for(Edge edge : current.neighbors) {
                 if(!seen.contains(edge.neighbor)) {
                     q.enqueue(edge.neighbor);
-                    seen.add(current);
+                    seen.add(edge.neighbor);
                 }
             }
         }
