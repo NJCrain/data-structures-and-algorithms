@@ -3,6 +3,8 @@ package graph;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -87,6 +89,20 @@ public class GraphTest {
         assertEquals("node2 should have 2 neighbors", 2, g.getNeighbors(node2).size());
         assertEquals("node3 should have 3 neighbors", 3, g.getNeighbors(node3).size());
         assertEquals("node4 should have 1 neighbor", 1, g.getNeighbors(node4).size());
+    }
+
+    @Test
+    public void testBreadthFirst() {
+        Node<Integer> node1 = g.getNodes().get(1);
+        Node<Integer> node2 = g.getNodes().get(2);
+        Node<Integer> node3 = g.getNodes().get(3);
+        Node<Integer> node4 = g.getNodes().get(4);
+        g.addEdge(node1, node2);
+        g.addEdge(node2, node3);
+        g.addEdge(node1, node3);
+        g.addEdge(node3, node4);
+
+        assertEquals(new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4)), Graph.breadthFirst(node1));
     }
 
 }
