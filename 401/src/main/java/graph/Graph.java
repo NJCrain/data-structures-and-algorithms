@@ -63,6 +63,7 @@ public class Graph<T> {
         return node.neighbors;
     }
 
+    //Static method that takes in a root Node and traverses the Graph via a breadth first traversal and returns a list of all Nodes visited
     public static List<Node<?>> breadthFirst(Node<?> root) {
         List<Node<?>> returnList = new ArrayList<>();
         Set<Node<?>> seen = new HashSet<>();
