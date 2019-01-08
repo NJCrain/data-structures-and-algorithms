@@ -1,9 +1,9 @@
 package graph;
 
+import stacksandqueues.Queue;
+
 import java.security.InvalidParameterException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class Graph<T> {
     private List<Node<T>> nodes;
@@ -59,7 +59,28 @@ public class Graph<T> {
     }
 
     //Takes in a Node and returns that Node's ArrayList of Edges that point to its neighbors
-    public List<Edge> getNeighbors(Node<T> node) {
+    public List<Edge<T>> getNeighbors(Node<T> node) {
         return node.neighbors;
+    }
+
+    //Static method that takes in a root Node and traverses the Graph via a breadth first traversal and returns a list of all Nodes visited
+    public static List<Node<?>> breadthFirst(Node<?> root) {
+        List<Node<?>> returnList = new ArrayList<>();
+        Set<Node<?>> seen = new HashSet<>();
+        Queue<Node<?>> q = new Queue<>();
+        seen.add(root);
+        q.enqueue(root);
+
+        while(q.front != null) {
+            Node<?> current = q.dequeue();
+            returnList.add(current);
+            for(Edge edge : current.neighbors) {
+                if(!seen.contains(edge.neighbor)) {
+                    q.enqueue(edge.neighbor);
+                    seen.add(edge.neighbor);
+                }
+            }
+        }
+        return returnList;
     }
 }

@@ -1,15 +1,15 @@
 package graph;
 
-public class Edge {
-   public Node neighbor;
+public class Edge<T> {
+   public Node<T> neighbor;
    public int weight;
 
-   public Edge(Node neighbor) {
+   public Edge(Node<T> neighbor) {
        this.neighbor = neighbor;
        this.weight = 0;
    }
 
-    public Edge(Node neighbor, int weight) {
+    public Edge(Node<T> neighbor, int weight) {
         this.neighbor = neighbor;
         this.weight = weight;
     }

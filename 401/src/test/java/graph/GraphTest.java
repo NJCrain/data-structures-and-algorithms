@@ -3,6 +3,8 @@ package graph;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -87,6 +89,26 @@ public class GraphTest {
         assertEquals("node2 should have 2 neighbors", 2, g.getNeighbors(node2).size());
         assertEquals("node3 should have 3 neighbors", 3, g.getNeighbors(node3).size());
         assertEquals("node4 should have 1 neighbor", 1, g.getNeighbors(node4).size());
+    }
+
+    @Test
+    public void testBreadthFirst() {
+        Node<Integer> node1 = g.getNodes().get(1);
+        Node<Integer> node2 = g.getNodes().get(2);
+        Node<Integer> node3 = g.getNodes().get(3);
+        Node<Integer> node4 = g.getNodes().get(4);
+        g.addEdge(node1, node2);
+        g.addEdge(node2, node3);
+        g.addEdge(node1, node3);
+        g.addEdge(node3, node4);
+
+        assertEquals(new ArrayList<Node>(Arrays.asList(node1, node2, node3, node4)), Graph.breadthFirst(node1));
+        assertEquals(new ArrayList<Node>(Arrays.asList(node2, node1, node3, node4)), Graph.breadthFirst(node2));
+        assertEquals(new ArrayList<Node>(Arrays.asList(node3, node2, node1, node4)), Graph.breadthFirst(node3));
+        assertEquals(new ArrayList<Node>(Arrays.asList(node4, node3, node2, node1)), Graph.breadthFirst(node4));
+
+        Node<Integer> node5 = g.getNodes().get(0);
+        assertEquals(node5, Graph.breadthFirst(node5).get(0));
     }
 
 }
