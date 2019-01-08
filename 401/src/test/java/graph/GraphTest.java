@@ -102,7 +102,7 @@ public class GraphTest {
         g.addEdge(node1, node3);
         g.addEdge(node3, node4);
 
-        assertEquals(new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4)), Graph.breadthFirst(node1));
+        assertEquals(new ArrayList<Node>(Arrays.asList(node1, node2, node3, node4)), Graph.breadthFirst(node1));
     }
 
 }
