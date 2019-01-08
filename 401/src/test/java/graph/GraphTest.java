@@ -103,6 +103,12 @@ public class GraphTest {
         g.addEdge(node3, node4);
 
         assertEquals(new ArrayList<Node>(Arrays.asList(node1, node2, node3, node4)), Graph.breadthFirst(node1));
+        assertEquals(new ArrayList<Node>(Arrays.asList(node2, node1, node3, node4)), Graph.breadthFirst(node2));
+        assertEquals(new ArrayList<Node>(Arrays.asList(node3, node2, node1, node4)), Graph.breadthFirst(node3));
+        assertEquals(new ArrayList<Node>(Arrays.asList(node4, node3, node2, node1)), Graph.breadthFirst(node4));
+
+        Node<Integer> node5 = g.getNodes().get(0);
+        assertEquals(node5, Graph.breadthFirst(node5).get(0));
     }
 
 }
