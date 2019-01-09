@@ -23,6 +23,7 @@ This table is organized by which day of class each challenge was assigned
 15. [Find Maximum Value Binary Tree](401/src/main/java/tree/BinaryTree.java) - [Challenge Documentation](#find-maximum-value-binary-tree)
 16. [Graph](401/src/main/java/graph) - [Challenge Documentation](#graph)
 17. [Breadth First Graph](401/src/main/java/graph/Graph.java) - [Challenge Documentation](#breadth-first-graph)
+18. [Get Edges](401/src/main/java/getedge/GetEdge.java) - [Challenge Documentation](#get-edges)
 
 # 401 Challenge Documentation
 
@@ -310,3 +311,14 @@ Within the Graph class, add a method that takes in a root Node and performs a br
 The approach taken for this method was to utilize a List of Nodes to be returned, a Set of Nodes that had already been seen while traversing, and a Queue to maintain the order of traversal. Starting from the root, it is added to the Queue and the Set of seen Nodes. The algorithm then loops while the Queue is not empty, dequeuing the front value, adding it to the List to return, and then iterating over its list of neighbors. Each neighbor Node is checked to see if it's in the Set of already seen Nodes, and if it is not, then that Node is added to the queue and the Set of seen Nodes. Once the Queue is empty, the List of Nodes is returned. This solution takes both O(n) space and time, as it has to iterate over each Nodes neighbors, and utilize multiple other data structures to track all relevant information.
 ### Solution
 ![whiteboard solution image](401/assets/breadth-first-graph.jpg)
+
+## Get Edges
+
+### Challenge
+Write a function which takes in a graph, and an array of city names. Without utilizing any of the built-in methods available to your language, return whether the full trip is possible with direct flights, and how much it would cost.
+
+### Approach and Efficiency
+The approach for this method was to first iterate over the graphs list of Nodes to find the node whose value matches the provided arrays value at index 0. This node is then the starting node, from where a set of nested for loops begins, starting at i = 1 and looking through the start nodes edges to find if any of its neighbors match the arrays value at index i. If a match is found, then the start node becomes that neighbor node, and the outer loop repeats. If at any point the method cannot find a direct connection to the next city, it will return 0, meaning the trip is not possible with direct flights. The Time efficiency for this method is O(n * d) where d represents the degree of the graph. This methods space efficiency is O(1), as it only ever needs an instance variable for one node and an integer for the cost.
+
+### Solution
+![whiteboard solution image](401/assets/get-edges.jpg)
