@@ -29,6 +29,12 @@ public class GetEdgeTest {
     @Test
     public void testGetEdge() {
         String[] cities = {"A", "C", "E"};
-        assertEquals(getEdge(cities, g), 134);
+        assertEquals(134, getEdge(cities, g));
+
+        String[] notPossible = {"A", "B", "C"};
+        assertEquals(0, getEdge(notPossible, g));
+
+        String[] noStart = {"7", "potato", "Lemons"};
+        assertEquals(0, getEdge(noStart, g));
     }
 }
