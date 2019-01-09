@@ -23,6 +23,7 @@ This table is organized by which day of class each challenge was assigned
 15. [Find Maximum Value Binary Tree](401/src/main/java/tree/BinaryTree.java) - [Challenge Documentation](#find-maximum-value-binary-tree)
 16. [Graph](401/src/main/java/graph) - [Challenge Documentation](#graph)
 17. [Breadth First Graph](401/src/main/java/graph/Graph.java) - [Challenge Documentation](#breadth-first-graph)
+18. [Get Edges](401/src/main/java/getedge/GetEdge.java) - [Challenge Documentation](#get-edges)
 
 # 401 Challenge Documentation
 
