@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Set;
 
 public class DepthFirst {
+
+    //Takes in a graph and returns a List of all the Nodes in the graph in depth-first pre-order
     public static List<Node> depthFirst(Graph g) {
         Node current =  (Node) g.getNodes().get(0);
         List<Node> ans = new ArrayList<>();
