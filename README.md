@@ -24,6 +24,7 @@ This table is organized by which day of class each challenge was assigned
 16. [Graph](401/src/main/java/graph) - [Challenge Documentation](#graph)
 17. [Breadth First Graph](401/src/main/java/graph/Graph.java) - [Challenge Documentation](#breadth-first-graph)
 18. [Get Edges](401/src/main/java/getedge/GetEdge.java) - [Challenge Documentation](#get-edges)
+19. [Depth First](401/src/main/java/depthfirst/DepthFirst.java) - [Challenge Documentation](#depth-first)
 
 # 401 Challenge Documentation
 
@@ -322,3 +323,15 @@ The approach for this method was to first iterate over the graphs list of Nodes 
 
 ### Solution
 ![whiteboard solution image](401/assets/get-edges.jpg)
+
+## Depth First
+
+### Challenge
+Write a method that takes in a graph and returns a collection of nodes in depth-first pre-order
+
+### Approach and Efficiency
+The approach for this method was to grab the first Node in the graphs list of nodes, and then utilize a stack to maintain the order in which to visit nodes. The first node of the graph is added to the stack and the list of seen nodes, and then a loop is performed while the stack is not empty. Within that loop, a node is popped off the stack, added to the list that will be returned, and then its list of neighbors is iterated over. Each neighbor node is checked if it is in the seen set, and if it isn't then it's added to the seen set and placed on the stack. Once the stack is empty, the method will return the pre-ordered list of nodes. This method takes O(n * d) time, where d represents the degree of the graph. It will require O(n) space as there are multiple data structures in place that will take more space in direct relation to the # of nodes in the graph.
+
+### Solution
+![whiteboard solution image](401/assets/depthFirst.jpg)
+
