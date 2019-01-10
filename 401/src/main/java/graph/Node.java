@@ -11,4 +11,8 @@ public class Node<T> {
        this.value = value;
        this.neighbors = new ArrayList<>();
    }
+
+   public String toString() {
+       return "Node: " + this.value;
+   }
 }
