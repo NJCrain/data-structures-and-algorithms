@@ -22,15 +22,24 @@ public class Hashtable<T1, T2> {
 
     public void add(T1 key, T2 value) {
         int idx = getHash(key);
+        if (buckets[idx] == null) {
+            buckets[idx] = new LinkedList<>();
+        }
         buckets[idx].add(key + ": " + value);
     }
 
     public boolean contains(T1 key) {
         int idx = getHash(key);
-        if (buckets[idx].peek() == null) {
+        if (buckets[idx] == null) {
             return false;
         } else {
-            return true;
+            LinkedList<String> ll = buckets[idx];
+            for (int i = 0; i < ll.size(); i++) {
+                if (ll.get(i).contains(key.toString())) {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 
