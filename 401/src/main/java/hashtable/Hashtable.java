@@ -47,4 +47,8 @@ public class Hashtable<T1, T2> {
         }
         return (T2) buckets[idx].peek().split(": ")[1];
     }
+
+    public int size() {
+        return buckets.length;
+    }
 }
