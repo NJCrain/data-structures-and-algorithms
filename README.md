@@ -25,6 +25,7 @@ This table is organized by which day of class each challenge was assigned
 17. [Breadth First Graph](401/src/main/java/graph/Graph.java) - [Challenge Documentation](#breadth-first-graph)
 18. [Get Edges](401/src/main/java/getedge/GetEdge.java) - [Challenge Documentation](#get-edges)
 19. [Depth First](401/src/main/java/depthfirst/DepthFirst.java) - [Challenge Documentation](#depth-first)
+20. [Hashtable](401/src/main/java/hashtable) - [Challenge Documentation](#hashtable)
 
 # 401 Challenge Documentation
 
@@ -335,3 +336,25 @@ The approach for this method was to grab the first Node in the graphs list of no
 ### Solution
 ![whiteboard solution image](401/assets/depthFirst.jpg)
 
+## Hashtable
+A Hashtable class that allows for construction based on a user defined size. Creates an array of linked lists of that size. Uses a simple hash method to create has indexes when adding key/value pairs to the table.
+
+### Challenge
+Implement a Hashtable with the following capabilities
+  * a method named add that takes in both the key and value. This method should hash the key and add the key and value pair to the table.
+  * A method named Find that takes in the key and returns the value from key/value pair.
+  * A method named contains that takes in the key and returns if the key exists in the table already.
+
+### Approach & Efficiency
+This Hashtable implementation uses an array of linked lists to hold values at each index. The index a value is stored at depends on the hash generated from the getHash method. The use of linked lists is to handle the case of collisions. Assuming that a list is large enough to avoid constant collisions, the add, find, and contains methods all take constant [O(1)] time and space to run. The table will take O(n) space, where n represents the number of key/value pairs added to the table
+
+### API
+
+#### add
+Takes in a key and a value, hashes the key and adds the pair to the index for that hash
+
+#### contains
+Takes in a key and returns true if that key is already in the table, false if not
+
+#### find
+Takes in a key and returns that value associated with it in the table. Will throw a NoSuchElementException if the key is not in the table.
