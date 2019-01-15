@@ -10,5 +10,6 @@ class RepeatedWordTest {
     @Test
     void testFirstRepeat() throws Exception {
         assertEquals("a", firstRepeat("Once upon a time, there was a ..."));
+        assertEquals("a", firstRepeat("Once upon a time, there was a..."));
     }
 }

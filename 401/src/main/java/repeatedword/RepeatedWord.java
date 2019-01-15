@@ -11,7 +11,7 @@ public class RepeatedWord {
         int lastChar = 0;
 
         for (int i = 0; i < s.length(); i++)
-            if (s.charAt(i) == ' ') {
+            if (s.charAt(i) == ' ' || s.charAt(i) == '.' || s.charAt(i) == ',') {
                 String word = s.substring(lastChar, i);
                 lastChar = i + 1;
                 if (words.contains(word.toLowerCase())) {
