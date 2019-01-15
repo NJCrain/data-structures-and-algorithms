@@ -26,6 +26,7 @@ This table is organized by which day of class each challenge was assigned
 18. [Get Edges](401/src/main/java/getedge/GetEdge.java) - [Challenge Documentation](#get-edges)
 19. [Depth First](401/src/main/java/depthfirst/DepthFirst.java) - [Challenge Documentation](#depth-first)
 20. [Hashtable](401/src/main/java/hashtable) - [Challenge Documentation](#hashtable)
+21. [Repeated Word](401/src/main/java/repeatedword) - [Challenge Documentation](#repeated_word)
 
 # 401 Challenge Documentation
 
@@ -358,3 +359,14 @@ Takes in a key and returns true if that key is already in the table, false if no
 
 #### find
 Takes in a key and returns that value associated with it in the table. Will throw a NoSuchElementException if the key is not in the table.
+
+## Repeated Word
+
+### Challenge
+Write a method that takes in a String and returns the first repeated word in that String, without utilizing any of the built-in library methods available to your language,
+
+### Approach and Efficiency
+The approach for this was to iterate over every character in the String and look for when the current character was a space, comma, or period (could include more punctuation cases). After that, there is a check to handle not including punctuation when grabbing a word, and then the last word that occurred before that space, period, or comma is grabbed, and checked if it's in the HashSet. If it is, that word is immediately returned, as we want to return the first instance that condition is true. If it is not in the Set, then the word is added to the set and the loop continues. This solution takes O(n) time and space.
+
+### Solution
+![whiteboard solution image](401/assets/repeated_word.jpg)
