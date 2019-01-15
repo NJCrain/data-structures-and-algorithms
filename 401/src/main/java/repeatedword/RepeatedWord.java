@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class RepeatedWord {
+
+    //TODO: Make this handle cases where the first repeated word has punctuation at the end of it
     public static String firstRepeat(String s) throws Exception {
         Set<String> words = new HashSet<>();
         int lastChar = 0;
