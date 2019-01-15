@@ -10,7 +10,7 @@ public class RepeatedWord {
 
         for (int i = 0; i < s.length(); i++)
             if (s.charAt(i) == ' ') {
-                String word = s.substring(lastChar, i - 1);
+                String word = s.substring(lastChar, i);
                 lastChar = i + 1;
                 if (words.contains(word.toLowerCase())) {
                     return word;
