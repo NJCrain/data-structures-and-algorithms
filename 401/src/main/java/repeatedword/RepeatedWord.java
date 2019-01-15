@@ -5,22 +5,32 @@ import java.util.Set;
 
 public class RepeatedWord {
 
-    //TODO: Make this handle cases where the first repeated word has punctuation at the end of it
+    //TODO: Make this handle more cases of punctuation
     public static String firstRepeat(String s) throws Exception {
         Set<String> words = new HashSet<>();
         int lastChar = 0;
 
-        for (int i = 0; i < s.length(); i++)
+        for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == ' ' || s.charAt(i) == '.' || s.charAt(i) == ',') {
-                String word = s.substring(lastChar, i);
-                lastChar = i + 1;
-                if (words.contains(word.toLowerCase())) {
-                    return word;
-                } else {
-                    words.add(word.toLowerCase());
+                if (s.charAt(i - 1) != '.' && s.charAt(i - 1) != ',') {
+                    String word = s.substring(lastChar, i);
+                    lastChar = i + 1;
+                    if (words.contains(word.toLowerCase())) {
+                        return word;
+                    } else {
+                        words.add(word.toLowerCase());
+                    }
+                }
+                else {
+                    lastChar++;
                 }
             }
 
-        throw new Exception("No repeating words found");
+        }
+        if (words.contains(s.substring(lastChar).toLowerCase())) {
+            return s.substring(lastChar);
+        } else {
+            throw new Exception("No repeating words found");
+        }
     }
 }
