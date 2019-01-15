@@ -6,6 +6,8 @@ import java.util.Set;
 public class RepeatedWord {
 
     //TODO: Make this handle more cases of punctuation
+    //Takes in a string, and will return the first repeated word in the string.
+    //Accomplished without using any extra library methods in Java aside from a HashSet to track seen words.
     public static String firstRepeat(String s) throws Exception {
         Set<String> words = new HashSet<>();
         int lastChar = 0;
