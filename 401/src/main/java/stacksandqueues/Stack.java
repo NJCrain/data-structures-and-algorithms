@@ -20,7 +20,6 @@ public class Stack<T> {
             top = top.next;
             return temp.value;
         }
-        System.out.println("Can not pop, the stack is currently empty");
         return null;
     }
 
