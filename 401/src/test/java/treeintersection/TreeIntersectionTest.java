@@ -1,11 +1,11 @@
 package treeintersection;
 
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tree.BinaryTree;
 import tree.Node;
 
+import java.util.Iterator;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,8 +22,12 @@ class TreeIntersectionTest {
     }
 
     @Test
-    public void testTreeIntersection() {
+    void testTreeIntersection() {
         Set results = findCommonValues(t1, t2);
         assertEquals(3, results.size(), "There should be 3 common values in the set");
+        Iterator iterator = results.iterator();
+        assertEquals(1, iterator.next());
+        assertEquals(3, iterator.next());
+        assertEquals(5, iterator.next());
     }
 }
