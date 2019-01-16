@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import tree.BinaryTree;
 import tree.Node;
 
-import javax.swing.text.html.HTMLDocument;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -55,6 +54,16 @@ class TreeIntersectionTest {
         assertEquals("one", iterator.next());
         assertEquals("five", iterator.next());
         assertEquals("three", iterator.next());
+    }
+
+    @Test
+    void testTreeIntersection_NonMatchingTypes() {
+        BinaryTree<String> stringTree1 = new BinaryTree<>();
+
+        stringTree1.root = new Node<>("one", new Node<>("two", new Node<>("four"), new Node<>("five")), new Node<>("three", new Node<>("six"), null));
+
+        Set results = findCommonValues(stringTree1, t2);
+        assertEquals(0, results.size(), "These two trees should have nothing in common");
     }
 
 }
