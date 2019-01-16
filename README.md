@@ -26,7 +26,8 @@ This table is organized by which day of class each challenge was assigned
 18. [Get Edges](401/src/main/java/getedge/GetEdge.java) - [Challenge Documentation](#get-edges)
 19. [Depth First](401/src/main/java/depthfirst/DepthFirst.java) - [Challenge Documentation](#depth-first)
 20. [Hashtable](401/src/main/java/hashtable) - [Challenge Documentation](#hashtable)
-21. [Repeated Word](401/src/main/java/repeatedword) - [Challenge Documentation](#repeated_word)
+21. [Repeated Word](401/src/main/java/repeatedword) - [Challenge Documentation](#repeated-word)
+22. [Tree Intersection](401/src/main/java/treeintersection) - [Challenge Documentation](#tree-intersection)
 
 # 401 Challenge Documentation
 
@@ -370,3 +371,14 @@ The approach for this was to iterate over every character in the String and look
 
 ### Solution
 ![whiteboard solution image](401/assets/repeated_word.jpg)
+
+## Tree Intersection
+
+### Challenge
+Write a method that takes in two BinaryTrees and returns a set of values in common between the two.
+
+### Approach and Efficiency
+The approach for this was to traverse via an pre-order depth traversal and add each value from the tree into a set. Then the second tree is also traversed, and each value is checked if the set of values from the first tree contains it. If the previous condition is true, that value is added to another set called "duplicates". Once the traversal has finished for the second tree, the method returns "duplicates". This approach takes both O(n) time and space, where n is equal to the number of Nodes in the first tree plus the number of Nodes in the second tree.
+
+### Solution
+![whiteboard solution image](401/assets/tree_intersection.jpg)
