@@ -1,14 +1,18 @@
 package hashtable;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class Hashtable<T1, T2> {
     private LinkedList<String>[] buckets;
+    private List<T1> keys;
 
     //Constructor requires a size to create the table
     public Hashtable (int size) {
         this.buckets = new LinkedList[size];
+        this.keys = new ArrayList<>();
     }
 
     //private method to generate hash values for the table
@@ -29,6 +33,7 @@ public class Hashtable<T1, T2> {
             buckets[idx] = new LinkedList<>();
         }
         buckets[idx].add(key + ": " + value);
+        keys.add(key);
     }
 
     //Takes in a key, returns true if the given key is already in the table, false if not.
@@ -67,5 +72,9 @@ public class Hashtable<T1, T2> {
     //Returns the size of the Hashtable
     public int size() {
         return buckets.length;
+    }
+
+    public List<T1> getKeys() {
+        return this.keys;
     }
 }
