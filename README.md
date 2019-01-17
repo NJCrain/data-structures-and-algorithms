@@ -28,6 +28,7 @@ This table is organized by which day of class each challenge was assigned
 20. [Hashtable](401/src/main/java/hashtable) - [Challenge Documentation](#hashtable)
 21. [Repeated Word](401/src/main/java/repeatedword) - [Challenge Documentation](#repeated-word)
 22. [Tree Intersection](401/src/main/java/treeintersection) - [Challenge Documentation](#tree-intersection)
+23. [Left Join](401/src/main/java/leftjoin) - [Challenge Documentation](#left-join)
 
 # 401 Challenge Documentation
 
@@ -382,3 +383,14 @@ The approach for this was to traverse via an pre-order depth traversal and add e
 
 ### Solution
 ![whiteboard solution image](401/assets/tree_intersection.jpg)
+
+## Left Join
+
+### Challenge
+Write a method that takes in two Hashtables and performs a left join on them. It should return a representation of that join in some sort of data structure
+
+### Approach and Efficiency
+The approach for this was to create a 2d dimensional array with a size equal to that of the number of keys stored in the table. The inner arrays are each of size 3, as they only need to hold the key, and its value in the two tables. The method then iterates over each key in the first table, adding both the key and its value to the appropriate location in the 2d array. If the second table also contains that key, its value is added to the array as well, otherwise it is set to null. This method takes O(n) time and space where n represents the total key/value pairings in the first table.
+
+### Solution
+![whiteboard solution image](401/assets/left_join.jpg)

@@ -5,6 +5,9 @@ import hashtable.Hashtable;
 import java.util.List;
 
 public class LeftJoin {
+
+    //Takes in two Hashtables and performs a left join on them. Returns the result of that left join in a 2d array
+    //TODO: Make this work for any table, not just tables of String keys and values
     public static String[][] leftJoin(Hashtable<String, String> ht1, Hashtable<String, String> ht2) {
         List<String> keys = ht1.getKeys();
         String[][] joined = new String[keys.size()][3];
