@@ -29,6 +29,7 @@ This table is organized by which day of class each challenge was assigned
 21. [Repeated Word](401/src/main/java/repeatedword) - [Challenge Documentation](#repeated-word)
 22. [Tree Intersection](401/src/main/java/treeintersection) - [Challenge Documentation](#tree-intersection)
 23. [Left Join](401/src/main/java/leftjoin) - [Challenge Documentation](#left-join)
+24. [Insertion Sort](401/src/main/java/insertionsort) - [Challenge Documentation](#insertion-sort)
 
 # 401 Challenge Documentation
 
@@ -394,3 +395,11 @@ The approach for this was to create a 2d dimensional array with a size equal to 
 
 ### Solution
 ![whiteboard solution image](401/assets/left_join.jpg)
+
+## Insertion Sort
+
+### Challenge
+Write a function for insertion sort that takes in an unsorted array and returns the array sorted using insertion sort.
+
+### Approach and Efficiency
+The approach for this was to use a for loop that begins at the 2nd value in the array, and compare it to every value before it, while the next value is still greater than the current one being moved. Every time a value before the one being moved is greater than the one being moved, that larger value is shifted forward one index. Once the while loop within the for has been exited, the current value being moved is placed in the location it needs to go. This solution takes O(n^2) time to run, where the worst case is the input array is reverse ordered. As for space, the solution takes O(1) space, only needing a few int variables for tracking.
