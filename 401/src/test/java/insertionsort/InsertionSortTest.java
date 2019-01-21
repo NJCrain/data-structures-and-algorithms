@@ -77,5 +77,16 @@ class InsertionSortTest {
         }
     }
 
+    @Test
+    void testInsertionSort_ReversedToStart() {
+        int[] unsorted = new int[]{8, 7, 5, 4, 3, 2, 1};
+        int[] sorted= new int[]{1, 2, 3, 4, 5, 7, 8};
+
+        insertionSort(unsorted);
+
+        for (int i = 0; i < sorted.length; i++) {
+            assertEquals(sorted[i], unsorted[i], "The array should be modified in place, sorted lowest to highest");
+        }
+    }
 
 }
