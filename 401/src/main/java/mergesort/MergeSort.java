@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MergeSort {
 
-    protected static int[] mergeSort(int[] nums) {
+    static int[] mergeSort(int[] nums) {
 
         if (nums.length < 2) {
             return nums;
@@ -15,7 +15,7 @@ public class MergeSort {
         }
     }
 
-    public static int[] merge(int[] arr1, int[] arr2) {
+    static int[] merge(int[] arr1, int[] arr2) {
 
         int idx1 = 0;
         int idx2 = 0;
