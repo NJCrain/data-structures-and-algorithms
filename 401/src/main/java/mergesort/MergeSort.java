@@ -4,17 +4,18 @@ import java.util.Arrays;
 
 public class MergeSort {
 
+    //Recursive method that breaks down the provided array into small segments of 1 or 0 elements to then be merged
     static int[] mergeSort(int[] nums) {
 
         if (nums.length < 2) {
             return nums;
         } else {
-//            int middle = nums.length % 2 == 0 ?
             return merge(mergeSort(Arrays.copyOfRange(nums, 0, nums.length/2)),
                     mergeSort(Arrays.copyOfRange(nums, nums.length/2, nums.length)));
         }
     }
 
+    //method that merges two sorted arrays into one array, still sorted by lowest to highest values
     static int[] merge(int[] arr1, int[] arr2) {
 
         int idx1 = 0;
