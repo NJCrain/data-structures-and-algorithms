@@ -3,6 +3,8 @@ package quicksort;
 import stacksandqueues.Stack;
 
 public class QuickSort {
+
+    // Method to be called, simply takes the array, calls pivot on it once, then uses the helper
     public static void quickSort(int[] nums) {
         int pivotIdx = pivot(nums, 0, nums.length -1);
         quickSortHelper(nums, 0, pivotIdx - 1);
@@ -10,6 +12,8 @@ public class QuickSort {
 
     }
 
+    //Helper for the quickSort method. Takes in the original array, and what indexes within that array to work with
+    //Will pivot the entire sub-array if it has more than 1 value, and then break it up again
     static void quickSortHelper(int[] nums, int start, int end) {
         if (end - start < 1) {
             return;
@@ -20,6 +24,9 @@ public class QuickSort {
         }
     }
 
+    //Takes in the entire array, and what indexes to perform the pivoting on. The pivot value is always the element at start
+    //Will sort numbers into stacks based on if they are lower or higher, and then re-arrange the array in that range
+    //Returns the index that the pivot value was placed at
     static int pivot(int[] nums, int start, int end) {
         int pivot = nums[start];
         int pivotIdx = start;
