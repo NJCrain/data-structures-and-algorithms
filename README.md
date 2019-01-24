@@ -31,6 +31,7 @@ This table is organized by which day of class each challenge was assigned
 23. [Left Join](401/src/main/java/leftjoin) - [Challenge Documentation](#left-join)
 24. [Insertion Sort](401/src/main/java/insertionsort) - [Challenge Documentation](#insertion-sort)
 25. [Merge Sort](401/src/main/java/mergesort) - [Challenge Documentation](#merge-sort)
+26. [Radix Sort](401/src/main/java/radixsort) - [Challenge Documentation](#radix-sort)
 
 # 401 Challenge Documentation
 
