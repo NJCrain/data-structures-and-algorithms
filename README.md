@@ -31,6 +31,7 @@ This table is organized by which day of class each challenge was assigned
 23. [Left Join](401/src/main/java/leftjoin) - [Challenge Documentation](#left-join)
 24. [Insertion Sort](401/src/main/java/insertionsort) - [Challenge Documentation](#insertion-sort)
 25. [Merge Sort](401/src/main/java/mergesort) - [Challenge Documentation](#merge-sort)
+26. [Radix Sort](401/src/main/java/radixsort) - [Challenge Documentation](#radix-sort)
 
 # 401 Challenge Documentation
 
@@ -423,3 +424,14 @@ Write a function that accepts an array of unsorted integers, and returns a sorte
 
 ### Approach and Efficiency
 The approach for this was to utilize a pivot method that takes in an array of ints, a start index value, and an end index value. It will pick the pivot value to be the value in the array at the start index, and then sort everything into stacks based on if they are lower or higher than the pivot. It will then put all the value values into the array, beginning at the start, and for every low value added will increment the value of index where the pivot value goes. Once all low values are added, the high values are then added, and finally the pivot value is placed where it belongs. This method will return the index that the pivot was place at. The quickSort method then uses a helper method to divide the sub sections of the array. The helper takes the original array, the last pivot index, a start, and an end. If the number of elements the helper is to handle is 1 or 0, or will exit with a return statement. Otherwise, it will call pivot on the provided sub-array from the start to the end, and then recursively call itself on the next sub-arrays. The time operation for this method is O(nlogn), as pivot takes n time to run and will called logn times. The space for this method is O(n), as it uses two stacks to pivot, so the first call to pivot will require those stacks to contain every value in the array.
+
+## Radix Sort
+
+### Challenge
+Write a function that accepts an array of unsorted integers, and sorts the array with a Radix sort.
+
+### Approach and Efficiency
+The approach for this was to first find the number of digits each number in the input array has (assuming they are all the same length of digits), and then create a for loop that ran that many times. For every iteration of that for loop, an array of LinkedLists with size 10 is created. Then an inner loop is started that will look at every number at the current digit place to be checked (based on i from the outer loop), and add it the LinkedList in the LinkedList array whose index corresponds to the value of that digit (ie: looking at the 10s in 431 would place the number at the list at index 3). After all the numbers have been sorted by their digit, the values are then pulled out of the LinkedList array in order of value. This allows for stabling sorting numbers for each iteration of the outer loop. This solution take O(n * d) time, where d represents the number of digits, or length, of the numbers. It will also take O(n) space, due to the array of LinkedLists will always contain every value from the input array with every iteration.
+
+### Solution
+![whiteboard solution image](401/assets/radix_sort.jpg)
